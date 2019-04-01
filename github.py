@@ -5,6 +5,7 @@ from git import Repo
 #create github instance
 
 def get_commits():
+    """ Query git commit log and return a list of commits """
     PATH="."
         
     #get the repo from the current dir
@@ -17,7 +18,8 @@ def get_commits():
 
 
 def print_commits(commits):
+    """ Prints relevant info for commit history """
     for commit in commits:
-        print(commit)
+        print(commit, commit.author, ":", commit.message)
 
 print_commits(get_commits())
