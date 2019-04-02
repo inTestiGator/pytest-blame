@@ -1,5 +1,3 @@
-# Pull Request template
-
 # Description of Pull Request
 
 <!-- Please include a short summary of the proposed changes. -->
