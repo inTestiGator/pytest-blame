@@ -1,6 +1,6 @@
 # pytest-blame
 
-![logo](.github/path-to-logo.png "alt-text")
+![logo](temp-blame-icon.jpg "alt-text")
 
 [![Build Status](https://api.travis-ci.org/inTestiGator/pytest-blame.svg?branch=master)](
 https://travis-ci.org/inTestiGator/pytest-blame)
@@ -9,12 +9,16 @@ http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
 [![made-with-python](http://img.shields.io/badge/Made%20with-Python-orange.svg)](
 https://www.python.org/)
 
-A pytest pluggin that helps developer to find the most recent commit that passed
-test case
+A pytest pluggin that helps developers build succesful test cases by providing
+them with GitHub commit information when their test cases fail.
 
 ## Basic Features
+After `pytest-blame` has been successfully installed run pytest with
+the `--track` flag and you will see a report containing GitHub information at
+the top of your pytest report. `pytest-blame` will display the number of test
+cases that passed in the latest commit to GitHub, so you can compare it with your
+current rate. 
 
-Read locally commits and print out with pytest plugin
 
 ## Additional Features
 
