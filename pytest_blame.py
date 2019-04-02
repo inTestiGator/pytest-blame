@@ -1,4 +1,5 @@
 import pytest
+from git import Repo
 
 def pytest_addoption(parser):
     """ Print stuff to header with --track :D """
@@ -10,4 +11,8 @@ def pytest_addoption(parser):
 def pytest_report_header():
     """ Display github commit in header """
     if pytest.config.getoption('track'):
-        return "User: username Commit: commit Status: FAILING"
+        PATH="."
+        repo = Repo(PATH)
+        commits = list(repo.iter_commits())
+        msg = print("\nLast passing commit --> ", commits[0].author, ":", commits[0].message)
+        return msg
