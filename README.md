@@ -20,7 +20,6 @@ the top of your pytest report. `pytest-blame` will display the number of test
 cases that passed in the latest commit to GitHub, so you can compare it with your
 current rate.
 
-
 ## Additional Features
 
 Read commits on GitHub and print out information since the most recent commit
