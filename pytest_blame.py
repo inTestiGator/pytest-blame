@@ -12,6 +12,7 @@ def pytest_addoption(parser):
         help="pytest-blame help :D\n--track: show last git commit",
     )
 
+
 # pylint: disable=E1101
 def pytest_report_header():
     """ Display github commit in header """

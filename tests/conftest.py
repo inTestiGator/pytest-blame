@@ -2,11 +2,13 @@
 import pytest
 from git import Repo
 
+
 def pytest_addoption(parser):
     """ Print stuff to header with --track """
     group = parser.getgroup('track')
     group.addoption("--track", action="store_true",
                     help="pytest-blame help :D\n--track: show last git commit")
+
 
 # pylint: disable=E1101
 def pytest_report_header():
