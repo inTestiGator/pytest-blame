@@ -11,12 +11,10 @@ codecov = "*"
 flake8 = "*"
 pytest-sugar = "*"
 pytest-xdist = "*"
-black = "*"
-
-[packages]
-requests = "*"
 pathlib = "*"
 py = "*"
+
+[packages]
 
 [requires]
 python_version = "3.6"
