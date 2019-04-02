@@ -1,0 +1,3 @@
+[run]
+# omit the tests for test coverage monitoring
+omit=tests/*
