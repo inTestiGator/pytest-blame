@@ -20,6 +20,19 @@ the top of your pytest report. `pytest-blame` will display the number of test
 cases that passed in the latest commit to GitHub, so you can compare it with your
 current rate.
 
+<<<<<<< HEAD
+=======
+To run:
+As of now there isn't a way to test in a standard way.
+To test I am copying the contents of `pytest_blame.py` over to `tests/conftest.py`
+
+```
+cp pytest_blame.py tests/conftest.py
+```
+
+then running `pytest --track tests/` to see the output of the plugin.
+
+>>>>>>> 34a8974fb793417709a5143c47eb69e33f586837
 ## Additional Features
 
 Read commits on GitHub and print out information since the most recent commit
