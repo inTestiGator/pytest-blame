@@ -13,6 +13,7 @@ pytest-sugar = "*"
 pytest-xdist = "*"
 pathlib = "*"
 py = "*"
+pygithub = "*"
 
 [packages]
 
