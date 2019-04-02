@@ -1,3 +1,4 @@
+""" This tracks the last commit and prints out the results """
 import pytest
 from git import Repo
 
