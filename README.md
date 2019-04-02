@@ -6,7 +6,8 @@
 [![codecov.io](http://codecov.io/github/inTestiGator/pytest-blame/coverage.svg?branch=master)](http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
 [![made-with-python](http://img.shields.io/badge/Made%20with-Python-orange.svg)](https://www.python.org/)
 
-A pytest pluggin that helps developer to find the most recent commit that passed test case
+A pytest pluggin that helps developer to find the most recent commit that passed
+test case
 
 ## Basic Features
 
@@ -14,4 +15,5 @@ Read locally commits and print out with pytest plugin
 
 ## Additional Features
 
-Read commits on GitHub and print out information since the most recent commit that passed test case
+Read commits on GitHub and print out information since the most recent commit
+that passed test case.
