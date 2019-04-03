@@ -16,6 +16,7 @@ def pytest_addoption(parser):
 # pylint: disable=E1101
 def pytest_report_header():
     """ Display github commit in header """
+    msg = "Can't find the last passing commit"
     if pytest.config.getoption("track"):
         PATH = "."
         repo = Repo(PATH)
