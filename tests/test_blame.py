@@ -1,4 +1,4 @@
-import pytest
+""" Tests the pytest_blame.py plugin for pytest """
 
 
 def test_addoption():
