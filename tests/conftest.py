@@ -9,7 +9,7 @@ def pytest_addoption(parser):
     group.addoption(
         "--track",
         action="store_true",
-        help="pytest-blame help :D\n--track: show last git commit",
+        help="pytest-blame help \n--track: show last git commit",
     )
 
 
