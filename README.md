@@ -6,7 +6,7 @@
 https://travis-ci.org/inTestiGator/pytest-blame)
 [![codecov.io](http://codecov.io/github/inTestiGator/pytest-blame/coverage.svg?branch=master)](
 http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
-[![made-with-python](http://img.shields.io/badge/Made%20with-Python-orange.svg)](
+[![made-with-python](http://img.shields.io/badge/Made%20with-Python-blue.svg)](
 https://www.python.org/)
 
 A pytest plugin that helps developers build succesful test cases by providing
