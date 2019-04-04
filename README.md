@@ -9,7 +9,7 @@ http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
 [![made-with-python](http://img.shields.io/badge/Made%20with-Python-blue.svg)](
 https://www.python.org/)
 
-A pytest plugin that helps developers build succesful test cases by providing
+A pytest plugin that helps developers build successful test cases by providing
 them with GitHub commit information when their test cases fail.
 
 ## Basic Features
@@ -21,8 +21,8 @@ cases that passed in the latest commit to GitHub, so you can compare it with you
 current rate.
 
 To run:
-As of now there isn't a way to test in a standard way.
-To test I am copying the contents of `pytest_blame.py` over to `tests/conftest.py`
+As of now there isn't a way to see the output in a standard way.
+To run you need to copy the contents of `pytest_blame.py` over to `tests/conftest.py`
 
 ```
 cp pytest_blame.py tests/conftest.py

@@ -2,6 +2,8 @@
 import pytest
 from git import Repo
 
+pytest_plugins = "pytester"
+
 
 def pytest_addoption(parser):
     """ Print stuff to header with --track """
