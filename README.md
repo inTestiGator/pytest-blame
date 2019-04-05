@@ -8,6 +8,7 @@ https://travis-ci.com/inTestiGator/pytest-blame)
 http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
 [![made-with-python](http://img.shields.io/badge/Made%20with-Python-blue.svg)](
 https://www.python.org/)
+[![](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pytest-blame/community)
 
 A pytest plugin that helps developers build successful test cases by providing
 them with GitHub commit information when their test cases fail.
