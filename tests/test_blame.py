@@ -3,4 +3,3 @@
 
 def test_addoption():
     """Make sure that our plugin works."""
-    pass
