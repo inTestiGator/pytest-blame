@@ -1,6 +1,4 @@
 """ Tests the pytest_blame.py plugin for pytest """
-import pytest
-import pytest_blame
 
 
 def test_conftest(testdir, capsys):
@@ -43,3 +41,4 @@ def test_add():
     testdir.runpytest()
     standard_out, standard_err = capsys.readouterr()
     assert "Cannot find the last passing commit" in standard_out
+    assert standard_err == ""
