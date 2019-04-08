@@ -27,3 +27,9 @@ def pytest_report_header():
             "\nLast passing commit --> ", commits[0].author, ":", commits[0].message
         )
     return msg
+
+
+@pytest.fixture
+def no_arguments():
+    """Return no command-line arguments"""
+    return []
