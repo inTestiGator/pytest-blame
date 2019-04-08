@@ -4,7 +4,7 @@ from git import Repo
 
 
 def pytest_addoption(parser):
-    """ Print stuff to header with --track """
+    """Print stuff to header with --track"""
     group = parser.getgroup("track")
     group.addoption(
         "--track",
@@ -15,7 +15,7 @@ def pytest_addoption(parser):
 
 # pylint: disable=E1101
 def pytest_report_header():
-    """ Display github commit in header """
+    """Display github commit in header"""
     msg = print("Can't find the last passing commit")
     if pytest.config.getoption("track"):
         PATH = "."
