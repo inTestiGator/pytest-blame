@@ -28,3 +28,9 @@ def pytest_report_header():
     else:
         msg = print("Can't find the last passing commit")
     return msg
+
+
+@pytest.fixture
+def no_arguments():
+    """Return no command-line arguments"""
+    return []
