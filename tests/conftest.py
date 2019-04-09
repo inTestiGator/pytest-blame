@@ -1,4 +1,4 @@
-""" This tracks the last commit and prints out the results. """
+"""This tracks the last commit and prints out the results."""
 import pytest
 import json
 import requests
@@ -8,7 +8,7 @@ pytest_plugins = "pytester"
 
 
 def pytest_addoption(parser):
-    """ Print stuff to header with --track """
+    """Print stuff to header with --track"""
     group = parser.getgroup("track")
     group.addoption(
         "--track",
@@ -18,7 +18,7 @@ def pytest_addoption(parser):
 
 
 def getstatus(sha):
-    """get status of CI check from github"""
+    """Get status of CI check from github"""
     response = requests.get(
         "https://api.github.com/repos/inTestiGator/pytest-blame/statuses/" + str(sha)
     )
@@ -33,7 +33,7 @@ def getstatus(sha):
 
 # pylint: disable=E1101
 def pytest_report_header():
-    """ Display github commit in header """
+    """Display github commits"""
     if pytest.config.getoption("track"):
         PATH = "."
         repo = Repo(PATH)
