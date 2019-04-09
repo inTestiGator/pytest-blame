@@ -72,7 +72,7 @@ def pytest_report_header():
                         ":",
                         commits[i-1].message,
                     ) + faillingcommits
-                    i--
+                    i -= 1
                 msg = print(
                     "\nMost recent passing commit --> ",
                     commits[i].author,
