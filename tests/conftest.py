@@ -21,7 +21,7 @@ def getstatus(sha):
     """get status of CI check from github"""
     response = requests.get(
         "https://api.github.com/repos/inTestiGator/pytest-blame/statuses/" + str(sha),
-        headers={"Authorization":"token 88c06810ace8494f29403ad221d202136dcdbc3a"}
+        headers={"Authorization" : "token c839aadbb62354cb1d205ffd7c06ecc1f53b43ae"}
     )
     statuses = json.loads(response.text)
     if statuses == []:
