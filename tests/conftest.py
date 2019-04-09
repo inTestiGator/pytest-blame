@@ -59,9 +59,9 @@ def pytest_report_header():
             else:
                 msg = print(
                     "\nMost recent passing commit --> ",
-                    commits[i - 1].author,
+                    commits[i].author,
                     ":",
-                    commits[i - 1].message,
+                    commits[i].message,
                 )
                 break
     else:
