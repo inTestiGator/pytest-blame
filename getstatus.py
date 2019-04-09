@@ -5,7 +5,6 @@ import json
 def getstatus(sha):
     response = requests.get('https://api.github.com/repos/inTestiGator/pytest-blame/statuses/' + str(sha))
     statuses = json.loads(response.text)
-    print(statuses)
     if statuses == []:
         check = "failure"
     else:
