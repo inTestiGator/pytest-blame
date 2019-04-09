@@ -61,6 +61,12 @@ def pytest_report_header():
                 pass
             # find the most recent passing commit
             else:
+                passingcommits = (
+                    "\nMost recent passing commit --> "
+                    + str(commits[i].author)
+                    + ":"
+                    + str(commits[i].message)
+                )
                 faillingcommits = ""
                 # looping through all failling commits
                 while i > 0:
@@ -73,10 +79,7 @@ def pytest_report_header():
                     )
                     i -= 1
                 msg = print(
-                    "\nMost recent passing commit --> ",
-                    commits[i].author,
-                    ":",
-                    commits[i].message,
+                    passingcommits,
                     faillingcommits,
                     "\nThe last one is the most recent commit\n",
                 )
