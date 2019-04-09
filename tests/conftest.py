@@ -1,7 +1,7 @@
 """ This tracks the last commit and prints out the results. """
 import pytest
-import requests
 import json
+import requests
 from git import Repo
 
 pytest_plugins = "pytester"
@@ -18,7 +18,10 @@ def pytest_addoption(parser):
 
 
 def getstatus(sha):
-    response = requests.get('https://api.github.com/repos/inTestiGator/pytest-blame/statuses/' + str(sha))
+    """get status of CI check from github"""
+    response = requests.get(
+        "https://api.github.com/repos/inTestiGator/pytest-blame/statuses/" + str(sha)
+    )
     statuses = json.loads(response.text)
     if statuses == []:
         check = "failure"
@@ -40,7 +43,10 @@ def pytest_report_header():
                 pass
             else:
                 msg = print(
-                    "\nLast passing commit --> ", commits[i-1].author, ":", commits[i-1].message,
+                    "\nLast passing commit --> ",
+                    commits[i - 1].author,
+                    ":",
+                    commits[i - 1].message,
                 )
                 break
     else:
