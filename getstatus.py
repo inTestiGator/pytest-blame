@@ -1,13 +1,16 @@
 import requests
 import json
 
-def getstatus():
-    response = requests.get('https://api.github.com/repos/inTestiGator/pytest-blame/commits/heads/master/status')
-    print(response)
+
+def getstatus(sha):
+    response = requests.get('https://api.github.com/repos/inTestiGator/pytest-blame/statuses/' + str(sha))
     statuses = json.loads(response.text)
-    print(type(statuses))
+    if statuses == []:
+        check = "failure"
+    else:
+        state = statuses[0]
+        check = state["state"]
+    return check
 
-    for i in statuses:
-        print(statuses[i])
 
-getstatus()
+print(getstatus("a1b86303fe8d88f45e7973b274153c44c0bbbd6b"))
