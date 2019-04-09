@@ -39,19 +39,26 @@ def pytest_report_header():
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
         for i in range(len(commits)):
-            if getstatus(commits[i].hexsha) == "success":
-                pass
-            elif i == 0:
+            if getstatus(commits[i].hexsha) == "success" and i == 0:
                 msg = print(
-                    "\nCan't find passing commit, the most recent commit is failling --> ",
+                    "\nThe most recent commit is passing --> ",
                     commits[i].author,
                     ":",
                     commits[i].message,
                 )
+            elif i == len(commits) - 1 and getstatus(commits[i].hexsha) == "failure":
+                msg = print(
+                    "\nCan't find passing commit, the most recent commit is failling --> ",
+                    commits[0].author,
+                    ":",
+                    commits[0].message,
+                )
                 break
+            elif getstatus(commits[i].hexsha) == "failure":
+                pass
             else:
                 msg = print(
-                    "\nLast passing commit --> ",
+                    "\nMost recent passing commit --> ",
                     commits[i - 1].author,
                     ":",
                     commits[i - 1].message,
@@ -60,7 +67,6 @@ def pytest_report_header():
     else:
         msg = print("Can't find commits")
     return msg
-
 
 @pytest.fixture
 def no_arguments():
