@@ -17,6 +17,8 @@ def pytest_addoption(parser):
     )
 
 
+# m = re(r".*(/|:)(.+?/.+?)\.git", string)
+# m.group(2)
 def getstatus(sha):
     """get status of CI check from github"""
     response = requests.get(
