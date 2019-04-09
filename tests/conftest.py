@@ -35,7 +35,6 @@ def pytest_report_header():
         PATH = "."
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
-        print(commits[0].hexsha)
         for i in range(len(commits)):
             if getstatus(commits[i].hexsha) == "success":
                 pass
