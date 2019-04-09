@@ -33,12 +33,13 @@ def getstatus(sha):
 
 # pylint: disable=E1101
 def pytest_report_header():
-    """ Display github commit in header """
+    """Display github commits"""
     if pytest.config.getoption("track"):
         PATH = "."
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
         for i in range(len(commits)):
+            # check if the most recent commit is passing
             if getstatus(commits[i].hexsha) == "success" and i == 0:
                 msg = print(
                     "\nThe most recent commit is passing --> ",
@@ -46,6 +47,7 @@ def pytest_report_header():
                     ":",
                     commits[i].message,
                 )
+            # check if no passing commit
             elif i == len(commits) - 1 and getstatus(commits[i].hexsha) == "failure":
                 msg = print(
                     "\nCan't find passing commit, the most recent commit is failling --> ",
@@ -54,16 +56,34 @@ def pytest_report_header():
                     commits[0].message,
                 )
                 break
+            # check if current commit is failling
             elif getstatus(commits[i].hexsha) == "failure":
                 pass
+            # find the most recent passing commit
             else:
-                msg = print(
-                    "\nMost recent passing commit --> ",
-                    commits[i].author,
-                    ":",
-                    commits[i].message,
+                faillingcommits = print("")
+                while i > 0:
+                    faillingcommits = (
+                        print(
+                            "\nFailling commit --> ",
+                            commits[i - 1].author,
+                            ":",
+                            commits[i - 1].message,
+                        )
+                        + faillingcommits
+                    )
+                    i -= 1
+                msg = (
+                    print(
+                        "\nMost recent passing commit --> ",
+                        commits[i].author,
+                        ":",
+                        commits[i].message,
+                    )
+                    + faillingcommits
                 )
                 break
+    # give msg a default value
     else:
         msg = print("Can't find commits")
     return msg
