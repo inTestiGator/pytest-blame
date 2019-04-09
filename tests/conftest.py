@@ -68,9 +68,9 @@ def pytest_report_header():
                 while i > 0:
                     faillingcommits = print(
                         "\nFailling commit --> ",
-                        commits[i-1].author,
+                        commits[i - 1].author,
                         ":",
-                        commits[i-1].message,
+                        commits[i - 1].message,
                     ) + faillingcommits
                     i -= 1
                 msg = print(
