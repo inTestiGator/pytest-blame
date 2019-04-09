@@ -62,6 +62,7 @@ def pytest_report_header():
             # find the most recent passing commit
             else:
                 faillingcommits = ""
+                # looping through all failling commits
                 while i > 0:
                     faillingcommits = (
                         "\nFailling commit --> "
