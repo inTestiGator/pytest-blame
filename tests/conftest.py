@@ -78,12 +78,12 @@ def pytest_report_header():
                     ":",
                     commits[i].message,
                     faillingcommits,
-                    "The last one is the most recent commit",
+                    "\nThe last one is the most recent commit\n",
                 )
                 break
     # give msg a default value
     else:
-        msg = print("Can't find commits")
+        msg = print("\nCan't find commits")
     return msg
 
 
