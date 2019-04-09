@@ -1,5 +1,7 @@
 """ This tracks the last commit and prints out the results. """
 import pytest
+import requests
+import json
 from git import Repo
 
 pytest_plugins = "pytester"
@@ -15,6 +17,17 @@ def pytest_addoption(parser):
     )
 
 
+def getstatus(sha):
+    response = requests.get('https://api.github.com/repos/inTestiGator/pytest-blame/statuses/' + str(sha))
+    statuses = json.loads(response.text)
+    if statuses == []:
+        check = "failure"
+    else:
+        state = statuses[0]
+        check = state["state"]
+    return check
+
+
 # pylint: disable=E1101
 def pytest_report_header():
     """ Display github commit in header """
@@ -22,9 +35,15 @@ def pytest_report_header():
         PATH = "."
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
-        msg = print(
-            "\nLast passing commit --> ", commits[0].author, ":", commits[0].message
-        )
+        print(commits[0].hexsha)
+        for i in range(len(commits)):
+            if getstatus(commits[i].hexsha) == "success":
+                pass
+            else:
+                msg = print(
+                    "\nLast passing commit --> ", commits[i-1].author, ":", commits[i-1].message,
+                )
+                break
     else:
         msg = print("Can't find the last passing commit")
     return msg
