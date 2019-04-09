@@ -19,10 +19,13 @@ def pytest_addoption(parser):
 
 def getstatus(sha):
     """Get status of CI check from github"""
+    # request data of the specific sha
     response = requests.get(
         "https://api.github.com/repos/inTestiGator/pytest-blame/statuses/" + str(sha)
     )
+    # read json data and convert it to list
     statuses = json.loads(response.text)
+    # statuses will be an empty list if the state is failling or pending
     if statuses == []:
         check = "failure"
     else:
@@ -39,6 +42,7 @@ def pytest_report_header():
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
         for i in range(len(commits)):
+            # check if the most recent commit is passing
             if getstatus(commits[i].hexsha) == "success" and i == 0:
                 msg = print(
                     "\nThe most recent commit is passing --> ",
@@ -46,6 +50,7 @@ def pytest_report_header():
                     ":",
                     commits[i].message,
                 )
+            # check if no passing commit
             elif i == len(commits) - 1 and getstatus(commits[i].hexsha) == "failure":
                 msg = print(
                     "\nCan't find passing commit, the most recent commit is failling --> ",
@@ -54,8 +59,10 @@ def pytest_report_header():
                     commits[0].message,
                 )
                 break
+            # check if current commit is failling
             elif getstatus(commits[i].hexsha) == "failure":
                 pass
+            # find the most recent passing commit
             else:
                 msg = print(
                     "\nMost recent passing commit --> ",
@@ -64,6 +71,7 @@ def pytest_report_header():
                     commits[i].message,
                 )
                 break
+    # give msg a default value
     else:
         msg = print("Can't find commits")
     return msg
