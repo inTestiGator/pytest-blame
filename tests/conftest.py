@@ -20,7 +20,8 @@ def pytest_addoption(parser):
 def getstatus(sha):
     """get status of CI check from github"""
     response = requests.get(
-        "https://api.github.com/repos/inTestiGator/pytest-blame/statuses/" + str(sha)
+        "https://api.github.com/repos/inTestiGator/pytest-blame/statuses/" + str(sha),
+        headers={"Authorization":"token 88c06810ace8494f29403ad221d202136dcdbc3a"}
     )
     statuses = json.loads(response.text)
     if statuses == []:
@@ -47,6 +48,7 @@ def pytest_report_header():
                     ":",
                     commits[i].message,
                 )
+                break
             # check if no passing commit
             elif i == len(commits) - 1 and getstatus(commits[i].hexsha) == "failure":
                 msg = print(
