@@ -78,7 +78,7 @@ def pytest_report_header():
                     ":",
                     commits[i].message,
                     faillingcommits,
-                    "The last one is the most recent commit"
+                    "The last one is the most recent commit",
                 )
                 break
     # give msg a default value
