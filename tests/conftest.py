@@ -66,19 +66,25 @@ def pytest_report_header():
             else:
                 faillingcommits = print("")
                 while i > 0:
-                    faillingcommits = print(
-                        "\nFailling commit --> ",
-                        commits[i - 1].author,
-                        ":",
-                        commits[i - 1].message,
-                    ) + faillingcommits
+                    faillingcommits = (
+                        print(
+                            "\nFailling commit --> ",
+                            commits[i - 1].author,
+                            ":",
+                            commits[i - 1].message,
+                        )
+                        + faillingcommits
+                    )
                     i -= 1
-                msg = print(
-                    "\nMost recent passing commit --> ",
-                    commits[i].author,
-                    ":",
-                    commits[i].message,
-                ) + faillingcommits
+                msg = (
+                    print(
+                        "\nMost recent passing commit --> ",
+                        commits[i].author,
+                        ":",
+                        commits[i].message,
+                    )
+                    + faillingcommits
+                )
                 break
     # give msg a default value
     else:
