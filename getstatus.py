@@ -5,7 +5,7 @@ import requests
 
 def getstatus(sha):
     response = requests.get(
-        "https://api.github.com/repos/inTestiGator/pytest-blame/statuses/" + str(sha)
+        "https://api.github.com/repos/inTestiGator/(sha)
     )
     statuses = json.loads(response.text)
     if statuses == []:
