@@ -50,16 +50,17 @@ def pytest_report_header():
                     ":",
                     commits[i].message,
                 )
+                break
             # check if no passing commit
             elif i == len(commits) - 1 and getstatus(commits[i].hexsha) == "failure":
                 msg = print(
-                    "\nCan't find passing commit, the most recent commit is failling --> ",
+                    "\nCan't find passing commit, the most recent commit is failing --> ",
                     commits[0].author,
                     ":",
                     commits[0].message,
                 )
                 break
-            # check if current commit is failling
+            # check if current commit is failing
             elif getstatus(commits[i].hexsha) == "failure":
                 pass
             # find the most recent passing commit
@@ -67,16 +68,16 @@ def pytest_report_header():
                 passingcommits = (
                     "\nMost recent passing commit --> "
                     + str(commits[i].author)
-                    + ":"
+                    + ": "
                     + str(commits[i].message)
                 )
                 faillingcommits = ""
-                # looping through all failling commits
+                # looping through all failing commits
                 while i > 0:
                     faillingcommits = (
-                        "\nFailling commit --> "
+                        "\nFailing commit --> "
                         + str(commits[i - 1].author)
-                        + ":"
+                        + ": "
                         + str(commits[i - 1].message)
                         + faillingcommits
                     )
