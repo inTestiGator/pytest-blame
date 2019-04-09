@@ -2,4 +2,4 @@
 
 
 def test_addoption():
-    """ Tests whether addoption correctly adds our option """
+    """Make sure that our plugin works."""

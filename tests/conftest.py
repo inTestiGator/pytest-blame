@@ -60,3 +60,9 @@ def pytest_report_header():
     else:
         msg = print("Can't find commits")
     return msg
+
+
+@pytest.fixture
+def no_arguments():
+    """Return no command-line arguments"""
+    return []
