@@ -11,8 +11,10 @@ pytest_plugins = "pytester"
 
 def pytest_configure(config):
     global SLUG
-    fullURL = subprocess.run(["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE)
-    output = fullURL.stdout.decode("utf-8")
+    rawProcess = subprocess.run(["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE)
+    output = rawProcess.stdout.decode("utf-8")
+    regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
+    SLUG = regexMatches.group(2)
 
 
 def pytest_addoption(parser):
@@ -29,7 +31,7 @@ def getstatus(sha):
     """Get status of CI check from github"""
     # request data of the specific sha
     response = requests.get(
-        "https://api.github.com/repos/inTestiGator/pytest-blame/statuses/" + str(sha)
+        "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha)
     )
     # read json data and convert it to list
     statuses = json.loads(response.text)
@@ -54,7 +56,7 @@ def pytest_report_header():
             if getstatus(commits[i].hexsha) == "success" and i == 0:
                 msg = print(
                     "\nThe most recent commit is passing: ",
-                    "https://github.com/inTestiGator/pytest-blame/commit/" + commits[i].hexsha,
+                    "https://github.com/" + SLUG + "/commit/" + commits[i].hexsha,
                     "\n",
                     commits[i].author,
                     ":",
