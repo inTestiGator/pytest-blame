@@ -2,6 +2,9 @@
 import pytest
 import json
 import requests
+import re
+import subprocess
+
 from git import Repo
 
 pytest_plugins = "pytester"
