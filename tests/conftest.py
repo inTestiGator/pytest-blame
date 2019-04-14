@@ -45,10 +45,14 @@ def pytest_report_header():
             # check if the most recent commit is passing
             if getstatus(commits[i].hexsha) == "success" and i == 0:
                 msg = print(
-                    "\nThe most recent commit is passing --> ",
+                    "\nThe most recent commit is passing: ",
+                    "https://github.com/inTestiGator/pytest-blame/commit/" + commits[i].hexsha,
+                    "\n",
                     commits[i].author,
                     ":",
                     commits[i].message,
+                    "https://www.google.com/"
+
                 )
                 break
             # check if no passing commit
