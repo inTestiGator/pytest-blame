@@ -9,9 +9,12 @@ from git import Repo
 
 pytest_plugins = "pytester"
 
+
 def pytest_configure(config):
     global SLUG
-    rawProcess = subprocess.run(["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE)
+    rawProcess = subprocess.run(
+        ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE
+    )
     output = rawProcess.stdout.decode("utf-8")
     regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
     SLUG = regexMatches.group(2)
@@ -61,7 +64,6 @@ def pytest_report_header():
                     commits[i].author,
                     ":",
                     commits[i].message,
-
                 )
                 break
             # check if no passing commit
@@ -82,7 +84,10 @@ def pytest_report_header():
             else:
                 passingcommits = (
                     "\nMost recent passing commit: "
-                    + "https://github.com/" + SLUG + "/commit/" + commits[i].hexsha
+                    + "https://github.com/"
+                    + SLUG
+                    + "/commit/"
+                    + commits[i].hexsha
                     + "\n"
                     + str(commits[i].author)
                     + ": "
@@ -95,7 +100,10 @@ def pytest_report_header():
                 while i > 0:
                     faillingcommits = (
                         "\nFailing commit: "
-                        + "https://github.com/" + SLUG + "/commit/" + commits[i].hexsha
+                        + "https://github.com/"
+                        + SLUG
+                        + "/commit/"
+                        + commits[i].hexsha
                         + "\n"
                         + str(commits[i - 1].author)
                         + ": "
