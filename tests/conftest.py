@@ -6,6 +6,11 @@ from git import Repo
 
 pytest_plugins = "pytester"
 
+def pytest_configure(config):
+    global SLUG
+    fullURL = subprocess.run(["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE)
+    output = fullURL.stdout.decode("utf-8")
+
 
 def pytest_addoption(parser):
     """Print stuff to header with --track"""
