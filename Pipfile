@@ -25,3 +25,6 @@ python_version = "3.6"
 
 [pipenv]
 allow_prereleases = true
+
+[scripts]
+test = "bash -c 'pipenv run python setup.py install && pipenv run pytest'"
