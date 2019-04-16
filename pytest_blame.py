@@ -1,23 +1,26 @@
 """This tracks the last commit and prints out the results."""
-import pytest
 import json
-import requests
 import re
 import subprocess
+import pytest
+import requests
 
 from git import Repo
 
 pytest_plugins = "pytester"
 
 
+# pylint: disable=W0601
 def pytest_configure(config):
+    """Regex to read the repo path"""
     global SLUG
-    rawProcess = subprocess.run(
-        ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE
-    )
-    output = rawProcess.stdout.decode("utf-8")
-    regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
-    SLUG = regexMatches.group(2)
+    if config.pluginmanager.hasplugin("blame"):
+        rawProcess = subprocess.run(
+            ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE
+        )
+        output = rawProcess.stdout.decode("utf-8")
+        regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
+        SLUG = regexMatches.group(2)
 
 
 def pytest_addoption(parser):
@@ -47,7 +50,7 @@ def getstatus(sha):
     return check
 
 
-# pylint: disable=E1101
+# pylint: disable=E1101, C0200
 def pytest_report_header():
     """Display github commits"""
     if pytest.config.getoption("track"):
