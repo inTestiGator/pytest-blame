@@ -16,5 +16,3 @@ def sample_test(testdir):
 
 def test_getstatus(sample_test):
     """Make sure that our plugin works."""
-    result = sample_test.runpytest(​"track"​)
-    assert "Cannot find the last passing commit" in result.stdout
