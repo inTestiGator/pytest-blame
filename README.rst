@@ -2,9 +2,7 @@
 pytest-blame
 ============
 
-
-.. image:: .github/temp-blame-icon.jpg
-   :target: .github/temp-blame-icon.jpg
+.. image:: https://raw.githubusercontent.com/inTestiGator/pytest-blame/tree/documentation/reformat-readme/temp-blame-icon.png
    :alt: logo
 
 
