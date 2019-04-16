@@ -14,7 +14,7 @@ def pytest_configure(config):
     global SLUG
     if config.pluginmanager.hasplugin("blame"):
         rawProcess = subprocess.run(
-            ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE,
+            ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE
         )
         output = rawProcess.stdout.decode("utf-8")
         regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
@@ -37,7 +37,7 @@ def getstatus(sha):
     global TOKEN
     response = requests.get(
         "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha),
-        headers={"Authorization" : f"token {TOKEN}"}
+        headers={"Authorization": f"token {TOKEN}"},
     )
     # read json data and convert it to list
     statuses = json.loads(response.text)
