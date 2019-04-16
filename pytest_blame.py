@@ -48,7 +48,7 @@ def getstatus(sha):
 
 
 # pylint: disable=E1101
-def pytest_report_status():
+def pytest_report_header():
     """Display github commits"""
     if pytest.config.getoption("track"):
         PATH = "."
