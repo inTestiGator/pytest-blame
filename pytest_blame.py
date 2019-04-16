@@ -34,8 +34,10 @@ def pytest_addoption(parser):
 def getstatus(sha):
     """Get status of CI check from github"""
     # request data of the specific sha
+    global TOKEN
     response = requests.get(
-        "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha)
+        "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha),
+        headers={"Authorization" : f"token {TOKEN}"}
     )
     # read json data and convert it to list
     statuses = json.loads(response.text)
