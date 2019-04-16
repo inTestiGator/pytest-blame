@@ -18,9 +18,5 @@ def sample_test(testdir):
 def test_addoption(testdir):
     """test addoption"""
     testdir.copy_example("tests/test_sample.py")
-    testdir.runpytest("--track", "test_pass")
-
-
-def test_pass():
-    """pass"""
-    pass
+    result = testdir.runpytest("--track")
+    assert result.ret == 4
