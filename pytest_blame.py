@@ -31,6 +31,7 @@ def pytest_addoption(parser):
     )
 
 
+# pylint: disable=W0602, E0602
 def getstatus(sha):
     """Get status of CI check from github"""
     # request data of the specific sha
