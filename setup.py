@@ -5,6 +5,7 @@ from setuptools import setup, find_packages
 
 install_requires = ["pygithub", "pytest>=4.4.0", "gitpython", "requests"]
 
+
 def read(filename):
     """ This function is reads in the file with the file path """
     filepath = os.path.join(os.path.dirname(__file__), filename)
