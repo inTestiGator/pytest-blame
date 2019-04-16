@@ -57,7 +57,7 @@ def pytest_report_header():
         for i in range(len(commits)):
             # check if the most recent commit is passing
             if getstatus(commits[i].hexsha) == "success" and i == 0:
-                msg = print(
+                print(
                     "\nThe most recent commit is passing: ",
                     "https://github.com/" + SLUG + "/commit/" + commits[i].hexsha,
                     "\n",
@@ -68,7 +68,7 @@ def pytest_report_header():
                 break
             # check if no passing commit
             elif i == len(commits) - 1 and getstatus(commits[i].hexsha) == "failure":
-                msg = print(
+                print(
                     "\nCan't find passing commit, the most recent commit is failing: ",
                     "https://github.com/" + SLUG + "/commit/" + commits[0].hexsha,
                     "\n",
@@ -111,7 +111,7 @@ def pytest_report_header():
                         + faillingcommits
                     )
                     i -= 1
-                msg = print(
+                print(
                     passingcommits,
                     faillingcommits,
                     "\nThe last one is the most recent commit\n",
@@ -119,8 +119,7 @@ def pytest_report_header():
                 break
     # give msg a default value
     else:
-        msg = print("\nCan't find commits")
-    return msg
+        print("\nCan't find commits")
 
 
 @pytest.fixture
