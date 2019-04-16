@@ -2,8 +2,8 @@
 pytest-blame
 ============
 
-.. image:: .github/temp-blame-icon.png
-   :target: .github/temp-blame-icon.png
+.. image:: .github/blame-icon.png
+   :target: .github/blame-icon.png
    :alt: logo
 
 -------------------------------------------------------------------------------
