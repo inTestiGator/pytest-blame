@@ -3,6 +3,7 @@ import io
 import os
 from setuptools import setup, find_packages
 
+install_requires = ["pygithub", "pytest>=4.4.0", "gitpython", "requests"]
 
 def read(filename):
     """ This function is reads in the file with the file path """
@@ -23,5 +24,5 @@ setup(
     license="GNU",
     platforms="any",
     packages=find_packages(),
-    install_requires=read("requirements.txt").splitlines(),
+    install_requires=install_requires,
 )
