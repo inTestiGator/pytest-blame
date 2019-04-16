@@ -3,6 +3,8 @@ import io
 import os
 from setuptools import setup, find_packages
 
+install_requires = ["pygithub", "pytest>=4.4.0", "gitpython", "requests"]
+
 
 def read(filename):
     """ This function is reads in the file with the file path """
@@ -13,7 +15,7 @@ def read(filename):
 
 setup(
     name="pytest-blame",
-    version="1.0.0",
+    version="0.1.0",
     description="A pytest plugin helps developers to debug by providing useful commits history.",
     long_description=read("README.md"),
     author="Lancaster Wu, Spencer Huang, Carson Quigley, Patrick Palad, Paul Livingston",
@@ -23,5 +25,5 @@ setup(
     license="GNU",
     platforms="any",
     packages=find_packages(),
-    install_requires=read("requirements.txt").splitlines(),
+    install_requires=install_requires,
 )
