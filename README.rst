@@ -5,7 +5,7 @@ pytest-blame
 .. image:: .github/temp-blame-icon.png
    :target: .github/temp-blame-icon.png
    :alt: logo
-
+-------------------------------------------------------------------------------
 
 .. image:: https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master
    :target: https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master
