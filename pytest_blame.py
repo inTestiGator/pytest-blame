@@ -7,8 +7,6 @@ import requests
 
 from git import Repo
 
-pytest_plugins = "pytester"
-
 
 # pylint: disable=W0601
 def pytest_configure(config):
