@@ -1,7 +1,7 @@
 """ This file is used for deployment. """
 import io
 import os
-from setuptools import setup, find_packages
+from setuptools import setup
 
 install_requires = ["pygithub", "pytest>=4.4.0", "gitpython", "requests"]
 
@@ -15,7 +15,7 @@ def read(filename):
 
 setup(
     name="pytest-blame",
-    version="0.1.0",
+    version="0.1.1",
     description="A pytest plugin helps developers to debug by providing useful commits history.",
     long_description=read("README.md"),
     author="Lancaster Wu, Spencer Huang, Carson Quigley, Patrick Palad, Paul Livingston",
@@ -24,6 +24,11 @@ setup(
     url="https://github.com/inTestiGator/pytest-blame",
     license="GNU",
     platforms="any",
-    packages=find_packages(),
     install_requires=install_requires,
+    py_modules=["pytest_blame"],
+    entry_points={
+        'pytest11': [
+            'blame = pytest_blame',
+        ],
+    },
 )
