@@ -2,9 +2,22 @@
 import pytest
 import json
 import requests
+import re
+import subprocess
+
 from git import Repo
 
 pytest_plugins = "pytester"
+
+
+def pytest_configure(config):
+    global SLUG
+    rawProcess = subprocess.run(
+        ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE
+    )
+    output = rawProcess.stdout.decode("utf-8")
+    regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
+    SLUG = regexMatches.group(2)
 
 
 def pytest_addoption(parser):
@@ -21,7 +34,7 @@ def getstatus(sha):
     """Get status of CI check from github"""
     # request data of the specific sha
     response = requests.get(
-        "https://api.github.com/repos/inTestiGator/pytest-blame/statuses/" + str(sha)
+        "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha)
     )
     # read json data and convert it to list
     statuses = json.loads(response.text)
@@ -44,8 +57,10 @@ def pytest_report_header():
         for i in range(len(commits)):
             # check if the most recent commit is passing
             if getstatus(commits[i].hexsha) == "success" and i == 0:
-                msg = print(
-                    "\nThe most recent commit is passing --> ",
+                print(
+                    "\nThe most recent commit is passing: ",
+                    "https://github.com/" + SLUG + "/commit/" + commits[i].hexsha,
+                    "\n",
                     commits[i].author,
                     ":",
                     commits[i].message,
@@ -53,8 +68,10 @@ def pytest_report_header():
                 break
             # check if no passing commit
             elif i == len(commits) - 1 and getstatus(commits[i].hexsha) == "failure":
-                msg = print(
-                    "\nCan't find passing commit, the most recent commit is failing --> ",
+                print(
+                    "\nCan't find passing commit, the most recent commit is failing: ",
+                    "https://github.com/" + SLUG + "/commit/" + commits[0].hexsha,
+                    "\n",
                     commits[0].author,
                     ":",
                     commits[0].message,
@@ -66,23 +83,35 @@ def pytest_report_header():
             # find the most recent passing commit
             else:
                 passingcommits = (
-                    "\nMost recent passing commit --> "
+                    "\nMost recent passing commit: "
+                    + "https://github.com/"
+                    + SLUG
+                    + "/commit/"
+                    + commits[i].hexsha
+                    + "\n"
                     + str(commits[i].author)
                     + ": "
                     + str(commits[i].message)
+                    + "\n"
+                    + "--------------------------------"
                 )
                 faillingcommits = ""
                 # looping through all failing commits
                 while i > 0:
                     faillingcommits = (
-                        "\nFailing commit --> "
+                        "\nFailing commit: "
+                        + "https://github.com/"
+                        + SLUG
+                        + "/commit/"
+                        + commits[i].hexsha
+                        + "\n"
                         + str(commits[i - 1].author)
                         + ": "
                         + str(commits[i - 1].message)
                         + faillingcommits
                     )
                     i -= 1
-                msg = print(
+                print(
                     passingcommits,
                     faillingcommits,
                     "\nThe last one is the most recent commit\n",
@@ -90,8 +119,7 @@ def pytest_report_header():
                 break
     # give msg a default value
     else:
-        msg = print("\nCan't find commits")
-    return msg
+        print("\nCan't find commits")
 
 
 @pytest.fixture
