@@ -8,31 +8,25 @@ pytest-blame
    :alt: logo
 
 
-`
 .. image:: https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master
    :target: https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master
    :alt: Build Status
- <https://travis-ci.com/inTestiGator/pytest-blame>`_
-`
+
 .. image:: http://codecov.io/github/inTestiGator/pytest-blame/coverage.svg?branch=master
    :target: http://codecov.io/github/inTestiGator/pytest-blame/coverage.svg?branch=master
    :alt: codecov.io
- <http://codecov.io/github/inTestiGator/pytest-blame?branch=master>`_
-`
+
 .. image:: http://img.shields.io/badge/Made%20with-Python-blue.svg
    :target: http://img.shields.io/badge/Made%20with-Python-blue.svg
    :alt: made-with-python
- <https://www.python.org/>`_
 
 .. image:: https://img.shields.io/pypi/v/pytest-blame.svg
    :target: https://test.pypi.org/project/pytest-blame/
    :alt: PyPI version
 
-`
 .. image:: https://badges.gitter.im/Join%20Chat.svg
-   :target: https://badges.gitter.im/Join%20Chat.svg
+   :target: https://gitter.im/pytest-blame/community
    :alt: gitter-join-chat
- <https://gitter.im/pytest-blame/community>`_
 
 A pytest plugin that helps developers build successful test cases by providing
 them with GitHub commit information when their test cases fail.
