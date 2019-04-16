@@ -9,6 +9,8 @@
 
 pytest_plugins = "pytester"
 
+global TOKEN
+TOKEN=""
 
 # def pytest_configure(config):
 #     global SLUG
