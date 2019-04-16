@@ -26,9 +26,5 @@ setup(
     platforms="any",
     install_requires=install_requires,
     py_modules=["pytest_blame"],
-    entry_points={
-        'pytest11': [
-            'blame = pytest_blame',
-        ],
-    },
+    entry_points={"pytest11": ["blame = pytest_blame"]},
 )
