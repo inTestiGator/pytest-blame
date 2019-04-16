@@ -14,7 +14,7 @@ def pytest_configure(config):
     global SLUG
     if config.pluginmanager.hasplugin("blame"):
         rawProcess = subprocess.run(
-            ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE
+            ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE,
         )
         output = rawProcess.stdout.decode("utf-8")
         regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
