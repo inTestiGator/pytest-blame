@@ -17,7 +17,7 @@ setup(
     name="pytest-blame",
     version="0.1.1",
     description="A pytest plugin helps developers to debug by providing useful commits history.",
-    long_description=read("README.md"),
+    long_description=read("README.rst"),
     author="Lancaster Wu, Spencer Huang, Carson Quigley, Patrick Palad, Paul Livingston",
     author_email="wuj@allegheny.edu, huangs@allegheny.edu, quigleyc@allegheny.edu, "
     + "paladp@allegheny.edu, livingstonp@allegheny.edu",
