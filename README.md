@@ -8,6 +8,7 @@ https://travis-ci.com/inTestiGator/pytest-blame)
 http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
 [![made-with-python](http://img.shields.io/badge/Made%20with-Python-blue.svg)](
 https://www.python.org/)
+[![PyPI version](https://badge.fury.io/py/pytest-blame.svg)](https://test.pypi.org/project/pytest-blame/)
 [![gitter-join-chat](https://badges.gitter.im/Join%20Chat.svg)](
 https://gitter.im/pytest-blame/community)
 
@@ -31,6 +32,14 @@ cp pytest_blame.py tests/conftest.py
 ```
 
 then running `pytest --track tests/` to see the output of the plugin.
+
+[Sample PyPI page](https://test.pypi.org/project/pytest-blame/)
+
+Install the most recent version of this plugin with
+
+```
+pip install -i https://test.pypi.org/simple/ pytest-blame
+```
 
 ## Additional Features
 
