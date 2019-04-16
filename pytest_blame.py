@@ -6,7 +6,7 @@ import pytest
 import requests
 
 from git import Repo
-
+from tests import conftest
 
 # pylint: disable=W0601
 def pytest_configure(config):
@@ -35,7 +35,7 @@ def pytest_addoption(parser):
 def getstatus(sha):
     """Get status of CI check from github"""
     # request data of the specific sha
-    global TOKEN
+    TOKEN = 
     response = requests.get(
         "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha),
         headers={"Authorization": f"token {TOKEN}"},
