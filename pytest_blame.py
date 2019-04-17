@@ -6,7 +6,6 @@ import pytest
 import requests
 
 from git import Repo
-from tests import conftest
 
 # pylint: disable=W0601
 def pytest_configure(config):
@@ -32,10 +31,9 @@ def pytest_addoption(parser):
 
 
 # pylint: disable=W0602, E0602
-def getstatus(sha):
+def getstatus(sha, TOKEN):
     """Get status of CI check from github"""
     # request data of the specific sha
-    TOKEN = 
     response = requests.get(
         "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha),
         headers={"Authorization": f"token {TOKEN}"},
@@ -52,15 +50,16 @@ def getstatus(sha):
 
 
 # pylint: disable=E1101, C0200
-def pytest_report_header():
+def pytest_report_header(TOKEN):
     """Display github commits"""
+
     if pytest.config.getoption("track"):
         PATH = "."
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
         for i in range(len(commits)):
             # check if the most recent commit is passing
-            if getstatus(commits[i].hexsha) == "success" and i == 0:
+            if getstatus(commits[i].hexsha, TOKEN) == "success" and i == 0:
                 print(
                     "\nThe most recent commit is passing: ",
                     "https://github.com/" + SLUG + "/commit/" + commits[i].hexsha,
@@ -71,7 +70,7 @@ def pytest_report_header():
                 )
                 break
             # check if no passing commit
-            elif i == len(commits) - 1 and getstatus(commits[i].hexsha) == "failure":
+            elif i == len(commits) - 1 and getstatus(commits[i].hexsha, TOKEN) == "failure":
                 print(
                     "\nCan't find passing commit, the most recent commit is failing: ",
                     "https://github.com/" + SLUG + "/commit/" + commits[0].hexsha,
@@ -82,7 +81,7 @@ def pytest_report_header():
                 )
                 break
             # check if current commit is failing
-            elif getstatus(commits[i].hexsha) == "failure":
+            elif getstatus(commits[i].hexsha, TOKEN) == "failure":
                 pass
             # find the most recent passing commit
             else:
