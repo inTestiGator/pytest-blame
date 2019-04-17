@@ -1,5 +1,5 @@
 """This tracks the last commit and prints out the results."""
-# import pytest
+import pytest
 # import json
 # import requests
 # import re
@@ -7,11 +7,13 @@
 #
 # from git import Repo
 
+USERTOKEN=""
+
 pytest_plugins = "pytester"
 
-global TOKEN
-TOKEN=""
-
+@pytest.fixture
+def TOKEN():
+    return USERTOKEN
 # def pytest_configure(config):
 #     global SLUG
 #     rawProcess = subprocess.run(
