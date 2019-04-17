@@ -50,7 +50,7 @@ def getstatus(sha, TOKEN):
 
 
 # pylint: disable=E1101, C0200
-def pytest_report_header(TOKEN):
+def pytest_report_header():
     """Display github commits"""
 
     if pytest.config.getoption("track"):

@@ -7,7 +7,8 @@ import pytest
 #
 # from git import Repo
 
-USERTOKEN=""
+global USERTOKEN
+USERTOKEN = " "
 
 pytest_plugins = "pytester"
 
