@@ -1,4 +1,4 @@
-""" This file is used for deployment. """
+"""This file is used to deploy the plugin"""
 import io
 import os
 from setuptools import setup
@@ -7,7 +7,7 @@ install_requires = ["pygithub", "pytest>=4.4.0", "gitpython", "requests"]
 
 
 def read(filename):
-    """ This function is reads in the file with the file path """
+    """This function takes in a filepath and reads the file"""
     filepath = os.path.join(os.path.dirname(__file__), filename)
     with io.open(filepath, mode="r", encoding="utf-8") as f:
         return f.read()
