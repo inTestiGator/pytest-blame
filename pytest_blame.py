@@ -5,8 +5,8 @@ import subprocess
 import os
 import pytest
 import requests
-
 from git import Repo
+
 
 # pylint: disable=W0601
 def pytest_configure(config):
