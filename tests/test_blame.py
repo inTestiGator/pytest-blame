@@ -20,4 +20,4 @@ def test_addoption(testdir):
     testdir.copy_example("tests/test_sample.py")
     result = testdir.runpytest("--track")
     result.stdout.fnmatch_lines(["*"])
-    assert result.ret == 4
+    assert result.ret == 3

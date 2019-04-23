@@ -41,7 +41,7 @@ def getstatus(sha, TOKEN):
         headers={"Authorization": f"token {TOKEN}"},
     )
     # read json data and convert it to list
-    statuses = json.loads(response.text)
+    statuses = json.loads(ponse.text)
     # statuses will be an empty list if the state is failling or pending
     if statuses == []:
         check = "failure"
