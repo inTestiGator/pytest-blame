@@ -21,7 +21,7 @@ pytest-blame
    :alt: made-with-python
 
 .. image:: https://img.shields.io/pypi/v/pytest-blame.svg
-   :target: https://test.pypi.org/project/pytest-blame/
+   :target: https://pypi.org/project/pytest-blame/
    :alt: PyPI version
 
 .. image:: https://badges.gitter.im/Join%20Chat.svg
