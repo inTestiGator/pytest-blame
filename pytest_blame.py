@@ -11,7 +11,7 @@ from git import Repo
 # pylint: disable=W0601
 def pytest_configure(config):
     """Use Git to collect the url and then use Regex to recognize and save the slug"""
-    global USERTOKEN    
+    global USERTOKEN
     global SLUG
     if config.pluginmanager.hasplugin("blame"):
         rawProcess = subprocess.run(
