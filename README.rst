@@ -31,6 +31,19 @@ pytest-blame
 A pytest plugin that helps developers build successful test cases by providing
 them with GitHub commit information when their test cases fail.
 
+A Python Plugin for Tracking Test Case Status
+---------------------------------------------
+
+Everyone uses pytest. Or at least, everyone should. It's a super useful testing
+program with an easy-to-use syntax. Pytest Blame is a pytest plugin that allows
+pytest to do a quick check to Github to make sure the most recent commit is
+passing your cases. If somebody broke your cases, ``pytest-blame`` will display
+all the commits pushed since the build broke as well as who pushed each commit.
+This keeps team workflow transparent and allows for semi-realtime updates from
+Github without having to open a browser. Since ``pytest-blame`` can check up on
+the online repository as frequently as every time you run your test suite, there
+is less risk of a broken commit going unnoticed until a merge conflict occurs.
+
 Basic Features
 --------------
 
