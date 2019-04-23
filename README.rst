@@ -62,6 +62,10 @@ profile:
 
 .. image:: settings.gif
 
+.. image:: gif2.gif
+
+.. image:: gif3.gif
+
 run pytest with
 the ``--track`` flag and you will see a report containing GitHub information at
 the top of your pytest report. ``pytest-blame`` will display the number of test
