@@ -1,6 +1,6 @@
 # pytest-blame
 
-[logo](.github/blame-icon.png "alt-text")
+![logo](.github/blame-icon.png "alt-text")
 -------------------------------------------------------------------------------
 
 [![Build Status](https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master)](
