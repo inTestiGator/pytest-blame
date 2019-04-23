@@ -37,11 +37,11 @@ def getstatus(sha, TOKEN):
     """Get status of CI check from github"""
     # request data of the specific sha
     response = requests.get(
-        "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha),
+        "https://api.github.com/repos/" + + "/statuses/" + str(sha),
         headers={"Authorization": f"token {TOKEN}"},
     )
     # read json data and convert it to list
-    statuses = json.loads(ponse.text)
+    statuses = json.loads(response.text)
     # statuses will be an empty list if the state is failling or pending
     if statuses == []:
         check = "failure"
