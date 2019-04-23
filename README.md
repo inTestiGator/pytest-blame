@@ -70,12 +70,11 @@ To run you need to copy the contents of ``pytest_blame.py`` over to ``tests/conf
 
 then running ``pytest --track tests/`` to see the output of the plugin.
 
-`Sample PyPI page <https://test.pypi.org/project/pytest-blame/>`_
 
 Install the most recent version of this plugin with
 
 ```
-   pip install -i https://test.pypi.org/simple/ pytest-blame
+   pip install pytest-blame
 ```
 
 Additional Features
