@@ -20,7 +20,7 @@ def pytest_configure(config):
         output = rawProcess.stdout.decode("utf-8")
         regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
         SLUG = regexMatches.group(2)
-        USERTOKEN = os.environ['TOKEN']
+        USERTOKEN = os.environ["TOKEN"]
 
 
 def pytest_addoption(parser):
@@ -72,7 +72,10 @@ def pytest_report_header():
                 )
                 break
             # check if no passing commit
-            elif i == len(commits) - 1 and getstatus(commits[i].hexsha, USERTOKEN) == "failure":
+            elif (
+                i == len(commits) - 1
+                and getstatus(commits[i].hexsha, USERTOKEN) == "failure"
+            ):
                 print(
                     "\nCan't find passing commit, the most recent commit is failing: ",
                     "https://github.com/" + SLUG + "/commit/" + commits[0].hexsha,
