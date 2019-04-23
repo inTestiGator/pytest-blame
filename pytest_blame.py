@@ -19,7 +19,6 @@ def pytest_configure(config):
         if rawProcess == '':
             raise Exception('No git repository found. Please run pytest-blame \
                             from inside a git repo.')
-            sys.exit()
         output = rawProcess.stdout.decode("utf-8")
         regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
         SLUG = regexMatches.group(2)
