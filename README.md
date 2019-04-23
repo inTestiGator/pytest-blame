@@ -41,7 +41,7 @@ cloned you will need to run the install script to update your pytest
 configuration:
 
 ```
-   pipenv run python setup.py install
+pipenv run python setup.py install
 ```
 
 After ``pytest-blame`` has been successfully installed you will need to generate
@@ -68,7 +68,7 @@ As of now there isn't a way to see the output in a standard way.
 To run you need to copy the contents of ``pytest_blame.py`` over to ``tests/conftest.py``
 
 ```
-   cp pytest_blame.py tests/conftest.py
+cp pytest_blame.py tests/conftest.py
 ```
 
 then running ``pytest --track tests/`` to see the output of the plugin.
@@ -76,7 +76,7 @@ then running ``pytest --track tests/`` to see the output of the plugin.
 Install the most recent version of this plugin with
 
 ```
-   pip install pytest-blame
+pip install pytest-blame
 ```
 
 ## Additional Features
