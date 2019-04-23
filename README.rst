@@ -44,8 +44,12 @@ Github without having to open a browser. Since ``pytest-blame`` can check up on
 the online repository as frequently as every time you run your test suite, there
 is less risk of a broken commit going unnoticed until a merge conflict occurs.
 
-Basic Features
---------------
+Installation
+------------
+
+To install ``pytest-blame`` you will need to clone the `git repository
+<https://github.com/inTestiGator/pytest-blame>`. Once the repository has been
+cloned
 
 After ``pytest-blame`` has been successfully installed run pytest with
 the ``--track`` flag and you will see a report containing GitHub information at
