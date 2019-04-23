@@ -45,11 +45,14 @@ After ``pytest-blame`` has been successfully installed you will need to generate
 a Github User Token. To do this you will need to go to ``settings`` in your github
 profile:
 
-.. image:: settings.gif
+[![gif1](settings.gif)](
+settings.gif)
 
-.. image:: gif2.gif
+[![gif2](gif2.gif)](
+gif2.gif)
 
-.. image:: gif3.gif
+[![gif3](gif3.gif)](
+gif3.gif)
 
 run pytest with
 the ``--track`` flag and you will see a report containing GitHub information at
