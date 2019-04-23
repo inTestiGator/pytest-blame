@@ -1,32 +1,17 @@
+# pytest-blame
 
-pytest-blame
-============
-
-.. image:: .github/blame-icon.png
-   :target: .github/blame-icon.png
-   :alt: logo
-
+[logo](.github/blame-icon.png "alt-text")
 -------------------------------------------------------------------------------
 
-.. image:: https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master
-   :target: https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master
-   :alt: Build Status
-
-.. image:: http://codecov.io/github/inTestiGator/pytest-blame/coverage.svg?branch=master
-   :target: http://codecov.io/github/inTestiGator/pytest-blame/coverage.svg?branch=master
-   :alt: codecov.io
-
-.. image:: http://img.shields.io/badge/Made%20with-Python-blue.svg
-   :target: http://img.shields.io/badge/Made%20with-Python-blue.svg
-   :alt: made-with-python
-
-.. image:: https://img.shields.io/pypi/v/pytest-blame.svg
-   :target: https://pypi.org/project/pytest-blame/
-   :alt: PyPI version
-
-.. image:: https://badges.gitter.im/Join%20Chat.svg
-   :target: https://gitter.im/pytest-blame/community
-   :alt: gitter-join-chat
+[![Build Status](https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master)](
+https://travis-ci.com/inTestiGator/pytest-blame)
+[![codecov.io](http://codecov.io/github/inTestiGator/pytest-blame/coverage.svg?branch=master)](
+http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
+[![made-with-python](http://img.shields.io/badge/Made%20with-Python-blue.svg)](
+https://www.python.org/)
+[![PyPI version](https://img.shields.io/pypi/v/pytest-blame.svg)](https://pypi.org/project/pytest-blame/)
+[![gitter-join-chat](https://badges.gitter.im/Join%20Chat.svg)](
+https://gitter.im/pytest-blame/community)
 
 A pytest plugin that helps developers build successful test cases by providing
 them with GitHub commit information when their test cases fail.
