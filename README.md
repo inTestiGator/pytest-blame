@@ -6,7 +6,7 @@
 
 [![Build Status](https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master)](
 https://travis-ci.com/inTestiGator/pytest-blame)
-[![codecov.io](http://codecov.io/github/inTestiGator/pytest-blame/coverage.svg?branch=master)](
+[![codecov.io](https://img.shields.io/codecov/c/github/inTestiGator/pytest-blame/master.svg)](
 http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
 [![made-with-python](http://img.shields.io/badge/Made%20with-Python-blue.svg)](
 https://www.python.org/)
