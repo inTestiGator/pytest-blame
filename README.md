@@ -1,6 +1,6 @@
 # pytest-blame
 
-## ![logo](.github/blame-icon.png "alt-text")
+## ![logo](https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/blame-icon.png)
 
 ---
 
