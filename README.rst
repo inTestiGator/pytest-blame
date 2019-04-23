@@ -49,9 +49,21 @@ Installation
 
 To install ``pytest-blame`` you will need to clone the `git repository
 <https://github.com/inTestiGator/pytest-blame>`. Once the repository has been
-cloned
+cloned you will need to run the install script to update your pytest
+configuration:
 
-After ``pytest-blame`` has been successfully installed run pytest with
+.. code-block::
+
+   pipenv run python setup.py install
+
+After ``pytest-blame`` has been successfully installed you will need to generate
+a Github User Token. To do this you will need to go to ``settings`` in your github
+profile:
+
+.. raw:: html
+   <ifrome width="560" height="315" src="settings-gif.webgm" frameborder="0"></iframe>
+
+run pytest with
 the ``--track`` flag and you will see a report containing GitHub information at
 the top of your pytest report. ``pytest-blame`` will display the number of test
 cases that passed in the latest commit to GitHub, so you can compare it with your
