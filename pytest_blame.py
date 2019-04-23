@@ -2,9 +2,9 @@
 import json
 import re
 import subprocess
+import os
 import pytest
 import requests
-import os
 
 from git import Repo
 
@@ -33,7 +33,6 @@ def pytest_addoption(parser):
     )
 
 
-# pylint: disable=W0602, E0602
 def getstatus(sha, TOKEN):
     """Get status of CI check from github"""
     # request data of the specific sha
