@@ -4,12 +4,14 @@ import re
 import subprocess
 import pytest
 import requests
+import os
 
 from git import Repo
 
 # pylint: disable=W0601
 def pytest_configure(config):
     """Regex to read the repo path"""
+    global USERTOKEN
     global SLUG
     if config.pluginmanager.hasplugin("blame"):
         rawProcess = subprocess.run(
@@ -18,6 +20,7 @@ def pytest_configure(config):
         output = rawProcess.stdout.decode("utf-8")
         regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
         SLUG = regexMatches.group(2)
+        USERTOKEN = os.environ['TOKEN']
 
 
 def pytest_addoption(parser):
@@ -59,7 +62,7 @@ def pytest_report_header():
         commits = list(repo.iter_commits())
         for i in range(len(commits)):
             # check if the most recent commit is passing
-            if getstatus(commits[i].hexsha, TOKEN) == "success" and i == 0:
+            if getstatus(commits[i].hexsha, USERTOKEN) == "success" and i == 0:
                 print(
                     "\nThe most recent commit is passing: ",
                     "https://github.com/" + SLUG + "/commit/" + commits[i].hexsha,
@@ -70,7 +73,7 @@ def pytest_report_header():
                 )
                 break
             # check if no passing commit
-            elif i == len(commits) - 1 and getstatus(commits[i].hexsha, TOKEN) == "failure":
+            elif i == len(commits) - 1 and getstatus(commits[i].hexsha, USERTOKEN) == "failure":
                 print(
                     "\nCan't find passing commit, the most recent commit is failing: ",
                     "https://github.com/" + SLUG + "/commit/" + commits[0].hexsha,
@@ -81,7 +84,7 @@ def pytest_report_header():
                 )
                 break
             # check if current commit is failing
-            elif getstatus(commits[i].hexsha, TOKEN) == "failure":
+            elif getstatus(commits[i].hexsha, USERTOKEN) == "failure":
                 pass
             # find the most recent passing commit
             else:
