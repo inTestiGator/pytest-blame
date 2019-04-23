@@ -73,6 +73,7 @@ def pytest_report_header():
                 break
             # check if no passing commit
             elif (
+                # pylint: disable=C0330
                 i == len(commits) - 1
                 and getstatus(commits[i].hexsha, USERTOKEN) == "failure"
             ):
