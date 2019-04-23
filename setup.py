@@ -15,9 +15,10 @@ def read(filename):
 
 setup(
     name="pytest-blame",
-    version="0.1.4",
+    version="0.1.5",
     description="A pytest plugin helps developers to debug by providing useful commits history.",
-    long_description=read("README.rst"),
+    long_description=read("README.md"),
+    long_description_content_type="text/markdown",
     author="Lancaster Wu, Spencer Huang, Carson Quigley, Patrick Palad, Paul Livingston",
     author_email="wuj@allegheny.edu, huangs@allegheny.edu, quigleyc@allegheny.edu, "
     + "paladp@allegheny.edu, livingstonp@allegheny.edu",
