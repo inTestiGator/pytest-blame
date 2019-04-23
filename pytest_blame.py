@@ -20,7 +20,7 @@ def pytest_configure(config):
         output = rawProcess.stdout.decode("utf-8")
         regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
         SLUG = regexMatches.group(2)
-        USERTOKEN = os.environ["TOKEN"]
+        USERTOKEN = os.environ["GITHUB_OAUTH_TOKEN"]
 
 
 def pytest_addoption(parser):
