@@ -61,16 +61,10 @@ a Github User Token. To do this you will need to go to ``settings`` in your gith
 profile:
 
 .. image:: settings.gif
- :height: 50%
- :width: 50%
 
 .. image:: gif2.gif
- :height: 50%
- :width: 50%
 
 .. image:: gif3.gif
- :height: 50%
- :width: 50%
 
 run pytest with
 the ``--track`` flag and you will see a report containing GitHub information at
