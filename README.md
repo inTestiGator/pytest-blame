@@ -2,7 +2,7 @@
 
 ## ![logo](.github/blame-icon.png "alt-text")
 
--------------------------------------------------------------------------------
+---
 
 [![Build Status](https://api.travis-ci.com/inTestiGator/pytest-blame.svg?branch=master)](
 https://travis-ci.com/inTestiGator/pytest-blame)
@@ -19,7 +19,7 @@ them with GitHub commit information when their test cases fail.
 
 ## A Python Plugin for Tracking Test Case Status
 
----------------------------------------------
+---
 
 Everyone uses pytest. Or at least, everyone should. It's a super useful testing
 program with an easy-to-use syntax. Pytest Blame is a pytest plugin that allows
@@ -33,7 +33,7 @@ is less risk of a broken commit going unnoticed until a merge conflict occurs.
 
 ## Installation
 
-------------
+---
 
 To install ``pytest-blame`` you will need to clone the `git repository
 <https://github.com/inTestiGator/pytest-blame>`. Once the repository has been
@@ -81,7 +81,7 @@ Install the most recent version of this plugin with
 
 ## Additional Features
 
--------------------
+---
 
 Read commits on GitHub and print out information since the most recent commit
 that passed test case.
