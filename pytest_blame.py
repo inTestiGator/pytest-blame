@@ -37,7 +37,7 @@ def getstatus(sha, TOKEN):
     """Get status of CI check from github"""
     # request data of the specific sha
     response = requests.get(
-        "https://api.github.com/repos/" + + "/statuses/" + str(sha),
+        "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha),
         headers={"Authorization": f"token {TOKEN}"},
     )
     # read json data and convert it to list
@@ -55,7 +55,7 @@ def getstatus(sha, TOKEN):
 def pytest_report_header():
     """Display github commits"""
 
-    if pytest.config.getoption("track"):
+    if pytest.config.:
         PATH = "."
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
