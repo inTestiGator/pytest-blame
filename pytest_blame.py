@@ -10,8 +10,8 @@ from git import Repo
 
 # pylint: disable=W0601
 def pytest_configure(config):
-    """Regex to read the repo path"""
-    global USERTOKEN
+    """Use Git to collect the url and then use Regex to recognize and save the slug"""
+    global USERTOKEN    
     global SLUG
     if config.pluginmanager.hasplugin("blame"):
         rawProcess = subprocess.run(
@@ -24,7 +24,7 @@ def pytest_configure(config):
 
 
 def pytest_addoption(parser):
-    """Print stuff to header with --track"""
+    """Provide --track option to run the plugin"""
     group = parser.getgroup("track")
     group.addoption(
         "--track",
@@ -53,8 +53,7 @@ def getstatus(sha, TOKEN):
 
 # pylint: disable=E1101, C0200
 def pytest_report_header():
-    """Display github commits"""
-
+    """Run the plugin and display result in the pytest header"""
     if pytest.config.getoption("track"):
         PATH = "."
         repo = Repo(PATH)
