@@ -61,7 +61,7 @@ a Github User Token. To do this you will need to go to ``settings`` in your gith
 profile:
 
 .. raw:: html
-   <ifrome width="560" height="315" src="settings-gif.webgm" frameborder="0"></iframe>
+   <iframe width="560" height="315" src="/settings-gif.webgm" frameborder="0"></iframe>
 
 run pytest with
 the ``--track`` flag and you will see a report containing GitHub information at
