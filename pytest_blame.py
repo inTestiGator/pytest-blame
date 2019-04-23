@@ -16,9 +16,11 @@ def pytest_configure(config):
         rawProcess = subprocess.run(
             ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE
         )
-        if rawProcess == '':
-            raise Exception('No git repository found. Please run pytest-blame \
-                            from inside a git repo.')
+        if rawProcess == "":
+            raise Exception(
+                "No git repository found. Please run pytest-blame \
+                            from inside a git repo."
+            )
         output = rawProcess.stdout.decode("utf-8")
         regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
         SLUG = regexMatches.group(2)
