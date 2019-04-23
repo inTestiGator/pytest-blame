@@ -55,7 +55,7 @@ def getstatus(sha, TOKEN):
 def pytest_report_header():
     """Display github commits"""
 
-    if pytest.config.:
+    if pytest.config.getoption("track"):
         PATH = "."
         repo = Repo(PATH)
         commits = list(repo.iter_commits())
