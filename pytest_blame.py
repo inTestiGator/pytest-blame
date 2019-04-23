@@ -2,23 +2,30 @@
 import json
 import re
 import subprocess
+import os
 import pytest
 import requests
-
 from git import Repo
 
 
 # pylint: disable=W0601
 def pytest_configure(config):
     """Use Git to collect the url and then use Regex to recognize and save the slug"""
+    global USERTOKEN
     global SLUG
     if config.pluginmanager.hasplugin("blame"):
         rawProcess = subprocess.run(
             ["git", "config", "--get", "remote.origin.url"], stdout=subprocess.PIPE
         )
+        if rawProcess == "":
+            raise Exception(
+                "No git repository found. Please run pytest-blame \
+                            from inside a git repo."
+            )
         output = rawProcess.stdout.decode("utf-8")
         regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
         SLUG = regexMatches.group(2)
+        USERTOKEN = os.environ["GITHUB_OAUTH_TOKEN"]
 
 
 def pytest_addoption(parser):
@@ -31,11 +38,9 @@ def pytest_addoption(parser):
     )
 
 
-# pylint: disable=W0602, E0602
-def getstatus(sha):
+def getstatus(sha, TOKEN):
     """Get status of CI check from github"""
     # request data of the specific sha
-    global TOKEN
     response = requests.get(
         "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha),
         headers={"Authorization": f"token {TOKEN}"},
@@ -60,7 +65,7 @@ def pytest_report_header():
         commits = list(repo.iter_commits())
         for i in range(len(commits)):
             # check if the most recent commit is passing
-            if getstatus(commits[i].hexsha) == "success" and i == 0:
+            if getstatus(commits[i].hexsha, USERTOKEN) == "success" and i == 0:
                 print(
                     "\nThe most recent commit is passing: ",
                     "https://github.com/" + SLUG + "/commit/" + commits[i].hexsha,
@@ -71,7 +76,11 @@ def pytest_report_header():
                 )
                 break
             # check if no passing commit
-            elif i == len(commits) - 1 and getstatus(commits[i].hexsha) == "failure":
+            elif (
+                # pylint: disable=C0330
+                i == len(commits) - 1
+                and getstatus(commits[i].hexsha, USERTOKEN) == "failure"
+            ):
                 print(
                     "\nCan't find passing commit, the most recent commit is failing: ",
                     "https://github.com/" + SLUG + "/commit/" + commits[0].hexsha,
@@ -82,7 +91,7 @@ def pytest_report_header():
                 )
                 break
             # check if current commit is failing
-            elif getstatus(commits[i].hexsha) == "failure":
+            elif getstatus(commits[i].hexsha, USERTOKEN) == "failure":
                 pass
             # find the most recent passing commit
             else:
