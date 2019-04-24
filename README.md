@@ -54,13 +54,13 @@ a Github User Token.
 <!-- HTML is used here to specify the relative size for the gifs -->
 <img src=".github/key1.gif" alt="key1 gif" width="80%" height="80%"/>
 
-*On the dashboard on the left find ``Developer Settings`` and navigate to
+*Find ``Developer Settings`` in the dashboard on the left and navigate to
 ``Personal Access Tokens``*
 
 <img src=".github/key2.gif" alt="key2 gif" width="80%" height="80%"/>
 
-*When generating the key for ``pytest-blame`` make sure to include rights to
-``repo`` and ``hooks``*
+*Finally, when generating the key for ``pytest-blame`` make sure to include
+rights to ``repo`` and ``hooks``*
 
 <img src=".github/key3.gif" alt="key3 gif" width="80%" height="80%"/>
 <!-- -->
