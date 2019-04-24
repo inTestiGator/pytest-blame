@@ -37,10 +37,9 @@ is less risk of a broken commit going unnoticed until a merge conflict occurs.
 
 ---
 
-To install ``pytest-blame`` you will need to clone the `git repository
-<https://github.com/inTestiGator/pytest-blame>`. Once the repository has been
-cloned you will need to run the install script to update your pytest
-configuration:
+To install ``pytest-blame`` you will need to clone this github repository. Once
+the repository has been cloned you will need to run the install script to update
+your pytest configuration:
 
 ```
 pipenv run python setup.py install
@@ -49,19 +48,19 @@ pipenv run python setup.py install
 After ``pytest-blame`` has been successfully installed you will need to generate
 a Github User Token.
 
-This can be found under``Settings`` in your github profile:
+*This can be found under``Settings`` in your github profile:*
 
 <!-- TODO: 1080p minimum resolution, widescreen gifs -->
 <!-- HTML is used here to specify the relative size for the gifs -->
 <img src=".github/key1.gif" alt="key1 gif" width="80%" height="80%"/>
 
-On the dashboard on the left find ``Developer Settings`` and navigate to
-``Personal Access Tokens``
+*On the dashboard on the left find ``Developer Settings`` and navigate to
+``Personal Access Tokens``*
 
 <img src=".github/key2.gif" alt="key2 gif" width="80%" height="80%"/>
 
-When generating the key for ``pytest-blame`` make sure to include rights to
-``repo`` and ``hooks``
+*When generating the key for ``pytest-blame`` make sure to include rights to
+``repo`` and ``hooks``*
 
 <img src=".github/key3.gif" alt="key3 gif" width="80%" height="80%"/>
 <!-- -->
