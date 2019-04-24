@@ -1,6 +1,7 @@
+
 # pytest-blame
 
-## ![logo](https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/blame-icon.png)
+![logo](https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/blame-icon.png)
 
 ---
 
@@ -46,43 +47,55 @@ pipenv run python setup.py install
 ```
 
 After ``pytest-blame`` has been successfully installed you will need to generate
-a Github User Token. To do this you will need to go to ``settings`` in your github
-profile:
+a Github User Token.
 
-[![gif1](settings.gif)](
-settings.gif)
+This can be found under``Settings`` in your github profile:
 
-[![gif2](gif2.gif)](
-gif2.gif)
+<!-- TODO: 1080p minimum resolution, widescreen gifs -->
+<!-- HTML is used here to specify the relative size for the gifs -->
+<img src=".github/key1.gif" alt="key1 gif" width="80%" height="80%"/>
 
-[![gif3](gif3.gif)](
-gif3.gif)
+On the dashboard on the left find ``Developer Settings`` and navigate to
+``Personal Access Tokens``
 
-run pytest with
-the ``--track`` flag and you will see a report containing GitHub information at
-the top of your pytest report. ``pytest-blame`` will display the number of test
-cases that passed in the latest commit to GitHub, so you can compare it with your
-current rate.
+<img src=".github/key2.gif" alt="key2 gif" width="80%" height="80%"/>
+
+When generating the key for ``pytest-blame`` make sure to include rights to
+``repo`` and ``hooks``
+
+<img src=".github/key3.gif" alt="key3 gif" width="80%" height="80%"/>
+<!-- -->
+
+Now that you have a user token, you will need to paste it into the location where
+your terminal is sourced from. For example: Ubuntu uses ``bash``, so the default
+terminal source for ubuntu is ``.bashrc``.
+
+run pytest with the ``--track`` flag and you will see a report containing GitHub
+information at the top of your pytest report. ``pytest-blame`` will display the
+number of test cases that passed in the latest commit to GitHub, so you can
+compare it with your current rate.
 
 To run:
-As of now there isn't a way to see the output in a standard way.
-To run you need to copy the contents of ``pytest_blame.py`` over to ``tests/conftest.py``
+Running ``pytest --track tests/`` will invoke ``pytest-blame``, which will display
+the current status of your working branch in the pytest header.
 
-```
-cp pytest_blame.py tests/conftest.py
-```
-
-then running ``pytest --track tests/`` to see the output of the plugin.
-
-Install the most recent version of this plugin with
-
-```
-pip install pytest-blame
-```
-
-## Additional Features
+## Sample output
 
 ---
 
-Read commits on GitHub and print out information since the most recent commit
-that passed test case.
+A successful ``pytest-blame`` run will look something like this:
+
+```
+pytest --track tests
+```
+
+<!-- TODO: add sample pytest-blame output -->
+```
+
+```
+
+## The Team
+
+Check out the Pytest Blame Team!
+
+<!-- TODO: Add team profile images with links to github accounts -->
