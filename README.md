@@ -9,6 +9,7 @@
 https://travis-ci.com/inTestiGator/pytest-blame)
 [![codecov.io](https://img.shields.io/codecov/c/github/inTestiGator/pytest-blame/master.svg)](
 http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/891cced8c49c477f8ce46f4532eba718)](https://www.codacy.com/app/wuj/pytest-blame?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=inTestiGator/pytest-blame&amp;utm_campaign=Badge_Grade)
 [![made-with-python](http://img.shields.io/badge/Made%20with-Python-blue.svg)](
 https://www.python.org/)
 [![PyPI version](https://img.shields.io/pypi/v/pytest-blame.svg)](https://pypi.org/project/pytest-blame/)
