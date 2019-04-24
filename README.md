@@ -11,6 +11,7 @@ http://codecov.io/github/inTestiGator/pytest-blame?branch=master)
 [![made-with-python](http://img.shields.io/badge/Made%20with-Python-blue.svg)](
 https://www.python.org/)
 [![PyPI version](https://img.shields.io/pypi/v/pytest-blame.svg)](https://pypi.org/project/pytest-blame/)
+[<img src="https://img.shields.io/github/release/inTestiGator/pytest-blame.svg" />](https://github.com/inTestiGator/pytest-blame/releases)
 [![gitter-join-chat](https://badges.gitter.im/Join%20Chat.svg)](
 https://gitter.im/pytest-blame/community)
 
