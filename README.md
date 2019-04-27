@@ -60,7 +60,7 @@ a Github User Token.
      height="80%"/>
 
 *Then, find ``Developer Settings`` in the dashboard on the left and navigate to
-``Personal Access Tokens``. *
+``Personal Access Tokens``.*
 
 <img src=
 "https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key2.gif"
@@ -104,7 +104,7 @@ pytest --track tests
 <!-- TODO: add sample pytest-blame output -->
 
 ```
-<!-- someone pls add output I can't test the plugin rn -->
+<!-- someone pls add output I can't test the plugin rn T.T -->
 ```
 
 <!-- a cry for help ^^ -->
