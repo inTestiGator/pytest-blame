@@ -104,8 +104,10 @@ pytest --track tests
 <!-- TODO: add sample pytest-blame output -->
 
 ```
-
+<!-- someone pls add output I can't test the plugin rn -->
 ```
+
+<!-- a cry for help ^^ -->
 
 ## The Team
 
