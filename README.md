@@ -113,8 +113,6 @@ pytest --track tests/
 
 Check out the Pytest Blame Team!
 
-<!-- TODO: Add team profile images with links to github accounts -->
-
 <table>
   <tr>
     <td align="center">
