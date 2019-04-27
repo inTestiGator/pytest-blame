@@ -49,21 +49,33 @@ pipenv run python setup.py install
 After ``pytest-blame`` has been successfully installed you will need to generate
 a Github User Token.
 
-*This can be found under``Settings`` in your github profile:*
+*This can be found under ``Settings`` in your github profile:*
 
 <!-- TODO: 1080p minimum resolution, widescreen gifs -->
 <!-- HTML is used here to specify the relative size for the gifs -->
-<img src="https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key1.gif" alt="key1 gif" width="80%" height="80%"/>
+<img src=
+"https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key1.gif"
+     alt="key1 gif"
+     width="80%"
+     height="80%"/>
 
-*Find ``Developer Settings`` in the dashboard on the left and navigate to
-``Personal Access Tokens``*
+*Then, find ``Developer Settings`` in the dashboard on the left and navigate to
+``Personal Access Tokens``. *
 
-<img src="https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key2.gif" alt="key2 gif" width="80%" height="80%"/>
+<img src=
+"https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key2.gif"
+     alt="key2 gif"
+     width="80%"
+     height="80%"/>
 
 *Finally, when generating the key for ``pytest-blame`` make sure to include
 rights to ``repo`` and ``hooks``*
 
-<img src="https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key3.gif" alt="key3 gif" width="80%" height="80%"/>
+<img src=
+"https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key3.gif"
+     alt="key3 gif"
+     width="80%"
+     height="80%"/>
 <!-- -->
 
 Now that you have a user token, you will need to paste it into the location where
@@ -90,6 +102,7 @@ pytest --track tests
 ```
 
 <!-- TODO: add sample pytest-blame output -->
+
 ```
 
 ```
