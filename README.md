@@ -98,7 +98,7 @@ the current status of your working branch in the pytest header.
 A successful ``pytest-blame`` run will look something like this:
 
 ```
-pytest --track tests
+pytest --track tests/
 ```
 
 <!-- TODO: add sample pytest-blame output -->
@@ -114,3 +114,81 @@ pytest --track tests
 Check out the Pytest Blame Team!
 
 <!-- TODO: Add team profile images with links to github accounts -->
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/quigley-c">
+      <img src="https://avatars1.githubusercontent.com/u/35495466?s=460&v=4"
+        width=128px;>
+      <h3>Carson Quigley</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lancasterwu">
+      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
+        width=128px;>
+      <h3>Lancaster Wu</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/huangs1">
+      <img src="https://avatars3.githubusercontent.com/u/31478964?s=460v=4"
+        width=128px;>
+      <h3>Spencer Huang</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/paladp">
+      <img src="https://avatars3.githubusercontent.com/u/31668620?s=460v=4"
+        width=128px;>
+      <h3>Patrick Palad</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lancasterwu">
+      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
+        width=128px;>
+      <h3>Lancaster Wu</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lancasterwu">
+      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
+        width=128px;>
+      <h3>Lancaster Wu</h3>
+    </td>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/lancasterwu">
+      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
+        width=128px;>
+      <h3>Lancaster Wu</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lancasterwu">
+      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
+        width=128px;>
+      <h3>Lancaster Wu</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lancasterwu">
+      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
+        width=128px;>
+      <h3>Lancaster Wu</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lancasterwu">
+      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
+        width=128px;>
+      <h3>Lancaster Wu</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lancasterwu">
+      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
+        width=128px;>
+      <h3>Lancaster Wu</h3>
+    </td>
+    <td align="center">
+      <a href="https://github.com/lancasterwu">
+      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
+        width=128px;>
+      <h3>Lancaster Wu</h3>
+    </td>
+  </tr>
+</table>
