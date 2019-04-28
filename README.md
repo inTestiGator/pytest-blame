@@ -140,53 +140,9 @@ Check out the Pytest Blame Team!
       <h3>Patrick Palad</h3>
     </td>
     <td align="center">
-      <a href="https://github.com/lancasterwu">
-      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
-        width=128px;>
-      <h3>Lancaster Wu</h3>
-    </td>
-    <td align="center">
-      <a href="https://github.com/lancasterwu">
-      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
-        width=128px;>
-      <h3>Lancaster Wu</h3>
-    </td>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/lancasterwu">
-      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
-        width=128px;>
-      <h3>Lancaster Wu</h3>
-    </td>
-    <td align="center">
-      <a href="https://github.com/lancasterwu">
-      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
-        width=128px;>
-      <h3>Lancaster Wu</h3>
-    </td>
-    <td align="center">
-      <a href="https://github.com/lancasterwu">
-      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
-        width=128px;>
-      <h3>Lancaster Wu</h3>
-    </td>
-    <td align="center">
       <a href="https://github.com/livingstonp">
       <img src="https://avatars3.githubusercontent.com/u/46819028?s=460&v=4"
         width=128px;>
       <h3>Paul Livingston</h3>
-    </td>
-    <td align="center">
-      <a href="https://github.com/lancasterwu">
-      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
-        width=128px;>
-      <h3>Lancaster Wu</h3>
-    </td>
-    <td align="center">
-      <a href="https://github.com/lancasterwu">
-      <img src="https://avatars3.githubusercontent.com/u/31478979?s=460&v=4"
-        width=128px;>
-      <h3>Lancaster Wu</h3>
-    </td>
   </tr>
 </table>
