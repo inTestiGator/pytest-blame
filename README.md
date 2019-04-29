@@ -88,8 +88,8 @@ number of test cases that passed in the latest commit to GitHub, so you can
 compare it with your current rate.
 
 To run:
-``pytest --track tests/`` will invoke ``pytest-blame``, which will display
-the current status of your working branch in the pytest header.
+``pytest --track tests/`` will invoke ``pytest-blame``, displaying the current
+status of your working branch in the pytest header.
 
 ## Sample output
 
@@ -140,7 +140,7 @@ Check out the Pytest Blame Team!
       <h3>Patrick Palad</h3>
     </td>
     <td align="center">
-      <a href="https://github.com/livingstonp">
+      <a href="https://github.com/livingstonp729">
       <img src="https://avatars3.githubusercontent.com/u/46819028?s=460&v=4"
         width=128px;>
       <h3>Paul Livingston</h3>
