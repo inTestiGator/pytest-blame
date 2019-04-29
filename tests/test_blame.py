@@ -2,6 +2,7 @@
 
 import pytest
 import subprocess
+import os
 
 
 @pytest.fixture()
@@ -18,9 +19,11 @@ def sample_test(testdir):
 
 def test_addoption(sample_test):
     """test addoption"""
+    # set working directory to .local
+    # delete .local/test-directory
     # testdir.copy_example("tests/test_sample.py")
-    subprocess.Popen(['git', 'clone', "git@github.com:inTestiGator/test-repository.git", '$HOME/local'])
-    result = sample_test.runpytest("--track $HOME/local/test-repository")
+    subprocess.run(['git', 'clone', "git@github.com:inTestiGator/test-repository.git", f"{os.environ['HOME']}/.local/test-repository"])
+    result = sample_test.runpytest("--track f'{os.environ['HOME']}/.local/test-repository'")
     print(result.stdout)
     result.stdout.fnmatch_lines(["*"])
     assert result.ret == 3
