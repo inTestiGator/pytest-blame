@@ -23,7 +23,6 @@ def pytest_configure(config):
                             from inside a git repo."
             )
         output = rawProcess.stdout.decode("utf-8")
-        print("output", output)
         regexMatches = re.search(r".*(/|:)(.+?/.+?)\.git", output)
         SLUG = regexMatches.group(2)
         USERTOKEN = os.environ["GITHUB_OAUTH_TOKEN"]
