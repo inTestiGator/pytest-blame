@@ -58,8 +58,8 @@ a Github User Token.
      width="80%"
      height="80%"/>
 
-*Then, find ``Developer Settings`` in the dashboard on the left and navigate to
-``Personal Access Tokens``.*
+<em>Then, find ``Developer Settings`` in the dashboard on the left and navigate to
+``Personal Access Tokens``.</em>
 
 <img src=
 "https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key2.gif"
@@ -67,8 +67,8 @@ a Github User Token.
      width="80%"
      height="80%"/>
 
-*Finally, when generating the key for ``pytest-blame`` make sure to include
-rights to ``repo`` and ``hooks``*
+<em>Finally, when generating the key for ``pytest-blame`` make sure to include
+rights to ``repo`` and ``hooks``</em>
 
 <img src=
 "https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key3.gif"
