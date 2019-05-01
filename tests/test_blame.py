@@ -19,11 +19,10 @@ def sample_test(testdir):
 
 def test_addoption(sample_test):
     """test addoption"""
-    # set working directory to .local
-    # delete .local/test-directory
-    # testdir.copy_example("tests/test_sample.py")
-    subprocess.run(['git', 'clone', "git@github.com:inTestiGator/test-repository.git", f"{os.environ['HOME']}/.local/test-repository"])
-    result = sample_test.runpytest("--track f'{os.environ['HOME']}/.local/test-repository'")
+    os.chdir(f"{os.environ['HOME']}/.local")
+    subprocess.run(['git', 'clone', "git@github.com:inTestiGator/test-repository.git"])
+    os.chdir(f"{os.environ['HOME']}/.local/test-repository/")
+    result = sample_test.runpytest("--track")
     print(result.stdout)
     result.stdout.fnmatch_lines(["*"])
     assert result.ret == 3
