@@ -18,6 +18,8 @@ env:
 
 before_script:
   - cd $HOME/.local
+  - git config --global user.email "pytest.blame.travis@gmail.com"
+  - git config --global user.name "pytest-blame-travis"
   - git clone git@github.com:inTestiGator/test-repository.git
 
 before_install:
