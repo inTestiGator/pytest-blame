@@ -20,7 +20,7 @@ def sample_test(testdir):
 def test_addoption(sample_test):
     """test addoption"""
     os.chdir(f"{os.environ['HOME']}/.local")
-    subprocess.run(['git', 'clone', "git@github.com:inTestiGator/test-repository.git"])
+    subprocess.run(["git", "clone", "git@github.com:inTestiGator/test-repository.git"])
     os.chdir(f"{os.environ['HOME']}/.local/test-repository/")
     result = sample_test.runpytest("--track")
     print(result.stdout)

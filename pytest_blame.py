@@ -1,5 +1,4 @@
 """This tracks the last commit and prints out the results."""
-import json
 import re
 import subprocess
 import os
@@ -43,14 +42,17 @@ def getstatus(sha, TOKEN):
     # request data of the specific sha
     response = requests.get(
         "https://api.github.com/repos/" + SLUG + "/commits/" + str(sha) + "/check-runs",
-        headers={"Authorization": f"token {TOKEN}", "Accept": "application/vnd.github.antiope-preview+json"},
+        headers={
+            "Authorization": f"token {TOKEN}",
+            "Accept": "application/vnd.github.antiope-preview+json",
+        },
     )
 
     # read json data
     raw = response.json()
 
-    if(raw["total_count"] != 0):
-        status = raw["check_runs"][0]["conclusion"];
+    if raw["total_count"] != 0:
+        status = raw["check_runs"][0]["conclusion"]
         return status
     else:
         return "failure"
