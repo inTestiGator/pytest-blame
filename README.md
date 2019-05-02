@@ -122,7 +122,7 @@ Lancaster Wu : Delete index.md
 
 or
 
-```allowEmpty
+```{flags: Array}
 Most recent passing commit: https://github.com/inTestiGator/pytest-blame/commit/4d4c5cb72cc86cfe35fb19e7630699f405677c69
 
 Patrick Palad: Disable pylint check
