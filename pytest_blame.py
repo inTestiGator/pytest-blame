@@ -42,23 +42,18 @@ def getstatus(sha, TOKEN):
     """Get status of CI check from github"""
     # request data of the specific sha
     response = requests.get(
-        "https://api.github.com/repos/" + SLUG + "/commits/" + str(sha) + "/statuses",
-        headers={"Authorization": f"token {TOKEN}", "Accept": "application/json"},
+        "https://api.github.com/repos/" + SLUG + "/commits/" + str(sha) + "/check-runs",
+        headers={"Authorization": f"token {TOKEN}", "Accept": "application/vnd.github.antiope-preview+json"},
     )
 
-    print(response)
-    print("https://api.github.com/repos/" + SLUG + "/commits/" + str(sha) + "/statuses")
-    # read json data and convert it to list
-    statuses = json.loads(response.text)
-    # statuses will be an empty list if the state is failling or pending
+    # read json data
+    raw = response.json()
 
-    print(statuses)
-    if statuses == []:
-        check = "failure"
+    if(raw["total_count"] != 0):
+        status = raw["check_runs"][0]["conclusion"];
+        return status
     else:
-        state = statuses[0]
-        check = state["state"]
-    return check
+        return "failure"
 
 
 # pylint: disable=E1101, C0200
@@ -132,7 +127,7 @@ def pytest_report_header():
                 print(
                     passingcommits,
                     faillingcommits,
-                    "\nThe last one is the most recent commit\n",
+                    "\nThe first one is the most recent commit\n",
                 )
                 break
     # give msg a default value
