@@ -15,14 +15,9 @@ env:
     - LANG=en_US.UTF-8
     - LC_ALL=en_US.UTF-8
     - secure: ef24184f-79a4-4e63-8645-fd9e7553d715
-git:
-  submodules:
-    false
 
 before_install:
   - gem install mdl
-  - echo -e "machine github.com\n  login pytest-blame-travis\n  password Allegheny2019" > ~/.netrc
-  - git submodule update --init --recursive
 
 notifications:
   email: never
