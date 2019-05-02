@@ -25,4 +25,5 @@ def test_addoption(sample_test):
     result = sample_test.runpytest("--track")
     print(result.stdout)
     result.stdout.fnmatch_lines(["*"])
-    assert result.ret == 3
+    print(result.ret)
+    assert result.ret == 5
