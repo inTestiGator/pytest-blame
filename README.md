@@ -112,18 +112,31 @@ pytest --track tests/
 Output:
 
 ```
-The most recent commit is passing:  https://github.com/inTestiGator/pytest-blame/commit/88ebf4107bc88d247a137d98ec9b45f6ae2658d3         Lancaster Wu : Delete index.md          
+The most recent commit is passing:  https://github.com/inTestiGator/pytest-blame/commit/88ebf4107bc88d247a137d98ec9b45f6ae2658d3
+Lancaster Wu : Delete index.md          
 ```
 
 or
 
 ```
-Most recent passing commit: https://github.com/inTestiGator/pytest-blame/commit/4d4c5cb72cc86cfe35fb19e7630699f405677c69                 Patrick Palad: Disable pylint check                                                                                                     --------------------------------
+Most recent passing commit: https://github.com/inTestiGator/pytest-blame/commit/4d4c5cb72cc86cfe35fb19e7630699f405677c69
+
+Patrick Palad: Disable pylint check
+
+--------------------------------
 Failing commit: https://github.com/inTestiGator/pytest-blame/commit/9d5d00bc8276d1efefb6beed39186b1bd9c64946
-Spencer Huang: return to passing commit                                                                                                 Failing commit: https://github.com/inTestiGator/pytest-blame/commit/03c68b6ff910ab46407c01ce382c7161f5906d43
-Spencer Huang: failing commit                                                                                                           Failing commit: https://github.com/inTestiGator/pytest-blame/commit/aab2684e748be41a73213861d1cedc4b5842f81a
-Spencer Huang: failling commit                                                                                                           Failing commit: https://github.com/inTestiGator/pytest-blame/commit/4d4c5cb72cc86cfe35fb19e7630699f405677c69
-Spencer Huang: fail test                                                                                                                 The last one is the most recent commit              
+Spencer Huang: return to passing commit
+
+Failing commit: https://github.com/inTestiGator/pytest-blame/commit/03c68b6ff910ab46407c01ce382c7161f5906d43
+Spencer Huang: failing commit
+
+Failing commit: https://github.com/inTestiGator/pytest-blame/commit/aab2684e748be41a73213861d1cedc4b5842f81a
+Spencer Huang: failling commit
+
+Failing commit: https://github.com/inTestiGator/pytest-blame/commit/4d4c5cb72cc86cfe35fb19e7630699f405677c69
+Spencer Huang: fail test
+
+The last one is the most recent commit              
 ```
 
 You may also recieve messages telling you that `can not find passing commits` when all commits are currently failing or pending.
