@@ -88,7 +88,8 @@ export GITHUB_OAUTH_TOKEN = "YOUR_TOKEN"
 ```
 
 If you are using Windows, you can go to `Control Panel -> System and Security ->
-System -> Advanced system settings -> Advanced -> Environment Variables` to set it up.
+System -> Advanced system settings -> Advanced -> Environment Variables` to
+set it up.
 
 ## Usage
 
@@ -141,7 +142,8 @@ Spencer Huang: fail test
 The last one is the most recent commit              
 ```
 
-You may also recieve messages telling you that `can not find passing commits` when all commits are currently failing or pending.
+You may also recieve messages telling you that `can not find passing commits` when
+all commits are currently failing or pending.
 
 ## The Team
 
