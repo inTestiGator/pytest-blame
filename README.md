@@ -90,10 +90,12 @@ export GITHUB_OAUTH_TOKEN = "YOUR_TOKEN"
 If you are using Windows, you can go to `Control Panel -> System and Security ->
 System -> Advanced system settings -> Advanced -> Environment Variables` to set it up.
 
-run pytest with the ``--track`` flag and you will see a report containing GitHub
-information at the top of your pytest report. ``pytest-blame`` will display the
-number of test cases that passed in the latest commit to GitHub, so you can
-compare it with your current rate.
+## Usage
+
+You can run pytest with the ``--track`` option and you will see a report containing GitHub
+information at the top of your pytest report. ``pytest-blame`` will display the most recent
+commit that is passing CI check, and all commits that did not pass CI check between the most
+recent commit and the most recent passing commit.
 
 To run:
 ``pytest --track tests/`` will invoke ``pytest-blame``, displaying the current
