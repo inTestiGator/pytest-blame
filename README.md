@@ -93,9 +93,10 @@ set it up.
 
 ## Usage
 
-You can run pytest with the ``--track`` option and you will see a report containing GitHub
-information at the top of your pytest report. ``pytest-blame`` will display the most recent
-commit that is passing CI check, and all commits that did not pass CI check between the most
+You can run pytest with the ``--track`` option and you will see a report
+containing GitHub information at the top of your pytest report.
+``pytest-blame`` will display the most recent commit that is passing CI
+check, and all commits that did not pass CI check between the most
 recent commit and the most recent passing commit.
 
 To run:
@@ -116,7 +117,7 @@ Output:
 
 ```
 The most recent commit is passing:  https://github.com/inTestiGator/pytest-blame/commit/88ebf4107bc88d247a137d98ec9b45f6ae2658d3
-Lancaster Wu : Delete index.md          
+Lancaster Wu : Delete index.md
 ```
 
 or
@@ -139,7 +140,7 @@ Spencer Huang: failling commit
 Failing commit: https://github.com/inTestiGator/pytest-blame/commit/4d4c5cb72cc86cfe35fb19e7630699f405677c69
 Spencer Huang: fail test
 
-The last one is the most recent commit              
+The last one is the most recent commit
 ```
 
 You may also recieve messages telling you that `can not find passing commits` when
