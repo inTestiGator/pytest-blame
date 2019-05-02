@@ -22,12 +22,6 @@ before_install:
 notifications:
   email: never
 
-endpoints:
-  https://api.travis-ci.com/:
-    access_token: WpL-3UINJVxAkOt7umxLjQ
-repos:
-  inTestiGator/test-repository:
-    endpoint: https://api.travis-ci.com/
 # command to install dependencies
 install:
   - pip install --upgrade pip
