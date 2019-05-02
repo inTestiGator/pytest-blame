@@ -16,6 +16,10 @@ env:
     - LC_ALL=en_US.UTF-8
     - secure: ef24184f-79a4-4e63-8645-fd9e7553d715
 
+before_script:
+  - cd $HOME/.local
+  - git clone git@github.com:inTestiGator/test-repository.git
+
 before_install:
   - gem install mdl
 
