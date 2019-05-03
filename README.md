@@ -62,7 +62,7 @@ a Github User Token.
 ``Personal Access Tokens``.</em>
 
 <img src=
-"https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key2.gif"
+"https://github.com/inTestiGator/pytest-blame/blob/master/.github/key2.gif?raw=true"
      alt="key2 gif"
      width="80%"
      height="80%"/>
