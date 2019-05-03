@@ -1,6 +1,6 @@
 # pytest-blame
 
-![logo](https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/blame-icon.png)
+![logo](https://github.com/inTestiGator/pytest-blame/blob/master/.github/blame-icon.png?raw=true)
 
 ---
 
