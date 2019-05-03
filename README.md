@@ -71,7 +71,7 @@ a Github User Token.
 rights to ``repo`` and ``hooks``</em>
 
 <img src=
-"https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key3.gif"
+"https://github.com/inTestiGator/pytest-blame/blob/master/.github/key3.gif?raw=true"
      alt="key3 gif"
      width="80%"
      height="80%"/>
