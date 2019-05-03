@@ -9,7 +9,8 @@ from git import Repo
 
 # pylint: disable=W0601
 def pytest_configure(config):
-    """Use Git to collect the url and then use Regex to recognize and save the slug"""
+    """Get the slug of the user's repository and the user's github token and save
+    them both in global variables."""
     global USERTOKEN
     global SLUG
     if config.pluginmanager.hasplugin("blame"):
@@ -28,7 +29,7 @@ def pytest_configure(config):
 
 
 def pytest_addoption(parser):
-    """Provide --track option to run the plugin"""
+    """Create --track option to run the plugin"""
     group = parser.getgroup("track")
     group.addoption(
         "--track",
@@ -47,20 +48,17 @@ def getstatus(sha, TOKEN):
             "Accept": "application/vnd.github.antiope-preview+json",
         },
     )
-
-    # read json data
     raw = response.json()
-
     if raw["total_count"] != 0:
         status = raw["check_runs"][0]["conclusion"]
         return status
-
     return "failure"
 
 
 # pylint: disable=E1101, C0200
 def pytest_report_header():
-    """Run the plugin and display result in the pytest header"""
+    """Adjust the header of the report to display the information for last passing
+    commit, failing commits, etc."""
     if pytest.config.getoption("track"):
         PATH = "."
         repo = Repo(PATH)
@@ -95,7 +93,7 @@ def pytest_report_header():
             # check if current commit is failing
             elif getstatus(commits[i].hexsha, USERTOKEN) == "failure":
                 pass
-            # find the most recent passing commit
+            # traceback to find the last passing commit
             else:
                 passingcommits = (
                     "\nMost recent passing commit: "
