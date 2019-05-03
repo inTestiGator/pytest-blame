@@ -53,7 +53,7 @@ a Github User Token.
 <!-- TODO: 1080p minimum resolution, widescreen gifs -->
 <!-- HTML is used here to specify the relative size for the gifs -->
 <img src=
-"https://raw.githubusercontent.com/inTestiGator/pytest-blame/doc/readme/.github/key1.gif"
+"https://github.com/inTestiGator/pytest-blame/blob/master/.github/key1.gif?raw=true"
      alt="key1 gif"
      width="80%"
      height="80%"/>
