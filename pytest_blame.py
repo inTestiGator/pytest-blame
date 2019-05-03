@@ -1,5 +1,4 @@
 """This tracks the last commit and prints out the results."""
-import json
 import re
 import subprocess
 import os
@@ -42,18 +41,21 @@ def getstatus(sha, TOKEN):
     """Get status of CI check from github"""
     # request data of the specific sha
     response = requests.get(
-        "https://api.github.com/repos/" + SLUG + "/statuses/" + str(sha),
-        headers={"Authorization": f"token {TOKEN}"},
+        "https://api.github.com/repos/" + SLUG + "/commits/" + str(sha) + "/check-runs",
+        headers={
+            "Authorization": f"token {TOKEN}",
+            "Accept": "application/vnd.github.antiope-preview+json",
+        },
     )
-    # read json data and convert it to list
-    statuses = json.loads(response.text)
-    # statuses will be an empty list if the state is failling or pending
-    if statuses == []:
-        check = "failure"
-    else:
-        state = statuses[0]
-        check = state["state"]
-    return check
+
+    # read json data
+    raw = response.json()
+
+    if raw["total_count"] != 0:
+        status = raw["check_runs"][0]["conclusion"]
+        return status
+
+    return "failure"
 
 
 # pylint: disable=E1101, C0200
@@ -127,7 +129,7 @@ def pytest_report_header():
                 print(
                     passingcommits,
                     faillingcommits,
-                    "\nThe last one is the most recent commit\n",
+                    "\nThe first one is the most recent commit\n",
                 )
                 break
     # give msg a default value

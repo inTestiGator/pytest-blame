@@ -1,8 +1,10 @@
 """ Tests the pytest_blame.py plugin for pytest """
 
+import subprocess
+import os
 import pytest
 
-
+# pylint: disable=W0621
 @pytest.fixture()
 def sample_test(testdir):
     """temporal test file"""
@@ -15,9 +17,13 @@ def sample_test(testdir):
     return testdir
 
 
-def test_addoption(testdir):
+def test_addoption(sample_test):
     """test addoption"""
-    testdir.copy_example("tests/test_sample.py")
-    result = testdir.runpytest("--track")
+    os.chdir(f"{os.environ['HOME']}/.local")
+    subprocess.run(["git", "clone", "git@github.com:inTestiGator/test-repository.git"])
+    os.chdir(f"{os.environ['HOME']}/.local/test-repository/")
+    result = sample_test.runpytest("--track")
+    print(result.stdout)
     result.stdout.fnmatch_lines(["*"])
-    assert result.ret == 4
+    print(result.ret)
+    assert result.ret == 5
