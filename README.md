@@ -146,6 +146,12 @@ The last one is the most recent commit
 You may also recieve messages telling you that `can not find passing commits` when
 all commits are currently failing or pending.
 
+## Failing Travis build
+
+The master branch is failing Travis because one of our test cases requires
+Travis to have access to our test repository and currently and it doesn't,
+so it cannot perform the actual testing.
+
 ## The Team
 
 Check out the Pytest Blame Team!
