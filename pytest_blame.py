@@ -54,8 +54,8 @@ def getstatus(sha, TOKEN):
     if raw["total_count"] != 0:
         status = raw["check_runs"][0]["conclusion"]
         return status
-    else:
-        return "failure"
+
+    return "failure"
 
 
 # pylint: disable=E1101, C0200

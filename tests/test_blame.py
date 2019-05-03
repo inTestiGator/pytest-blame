@@ -1,10 +1,10 @@
 """ Tests the pytest_blame.py plugin for pytest """
 
-import pytest
 import subprocess
 import os
+import pytest
 
-
+# pylint: disable=W0621
 @pytest.fixture()
 def sample_test(testdir):
     """temporal test file"""
