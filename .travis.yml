@@ -33,7 +33,7 @@ script:
   - pipenv run black **/*.py --check
   - pipenv run flake8 **/*.py
   - pipenv run pylint **/*.py
-  - mdl README.rst
+  - mdl -r ~MD033,~MD034 README.md
 
 # report coverage information to CodeCov
 after_success:
