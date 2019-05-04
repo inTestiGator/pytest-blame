@@ -149,7 +149,7 @@ all commits are currently failing or pending.
 ## Failing Travis build
 
 The master branch is failing Travis because one of our test cases requires
-Travis to have access to our test repository and currently and it doesn't,
+Travis to have access to our test repository and currently it doesn't,
 so it cannot perform the actual testing. This test case passes locally.
 
 ## The Team
